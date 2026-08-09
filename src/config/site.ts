@@ -112,7 +112,7 @@ export function resolveOwner(
  * 배포 뒤 서치콘솔·서치어드바이저에 등록하면서 받은 값을 채운다.
  */
 export const VERIFY = {
-  google: process.env.NEXT_PUBLIC_GOOGLE_VERIFY ?? '',
+  google: process.env.NEXT_PUBLIC_GOOGLE_VERIFY ?? '7o5zFd_vJovzcek8knV3yl4c53GFdARDspVAQcSwT8k',
   naver: process.env.NEXT_PUBLIC_NAVER_VERIFY ?? '',
 } as const
 
