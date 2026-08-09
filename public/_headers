@@ -1,0 +1,20 @@
+# 응답 헤더 설정.
+#
+# Cloudflare Pages가 이 파일을 읽는다. Netlify도 같은 문법을 쓰므로
+# 호스팅을 다시 옮기게 되어도 이 파일은 그대로 동작한다.
+
+/*
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: strict-origin-when-cross-origin
+
+# 파일명에 해시가 붙는 정적 자산이라 영구 캐시해도 안전하다.
+/_next/static/*
+  Cache-Control: public, max-age=31536000, immutable
+
+/images/*
+  Cache-Control: public, max-age=2592000
+
+# 글자체 파일. 판올림하면 파일명이 아니라 폴더째 갈아끼우므로 1년 캐시가 안전하다.
+# 다시 찾아온 사람은 글자를 한 번도 내려받지 않는다.
+/fonts/*
+  Cache-Control: public, max-age=31536000, immutable

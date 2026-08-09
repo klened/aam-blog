@@ -1,0 +1,17 @@
+# 더블에이엠 3D프린팅 인사이트
+#
+# 이 파일이 없으면 호스팅 기본 robots.txt 가 나가는데, 거기에는 사이트맵 위치도
+# 아무 규칙도 없다. 검색엔진이 사이트맵을 스스로 찾지 못하게 된다.
+#
+# 검수·초안이 보이는 검토용 배포는 이 파일이 아니라 페이지의 noindex 태그로 막는다.
+# robots.txt 로 막으면 크롤러가 페이지를 읽지 못해 noindex 를 보지도 못한다.
+
+User-agent: *
+Allow: /
+
+# search   : 검색 색인과 검색결과 표시. 이 사이트의 목적 그 자체다.
+# ai-input : AI가 답변을 만들 때 근거로 가져가는 것. 인용되는 것이 목표라 허용한다.
+# ai-train : 모델 학습에 쓰는 것. 인용으로 이어지지 않으므로 막는다.
+Content-Signal: search=yes, ai-input=yes, ai-train=no
+
+Sitemap: https://blog.aamkorea.co.kr/blog/sitemap.xml

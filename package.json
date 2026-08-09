@@ -1,0 +1,38 @@
+{
+  "name": "dowon-insight-blog",
+  "version": "1.0.0",
+  "private": true,
+  "description": "노무법인 도원 인사노무 인사이트 — Next.js 정적 블로그 (Notion CMS)",
+  "scripts": {
+    "dev": "next dev",
+    "prebuild": "node scripts/collect-images.mjs && node scripts/fetch-popular.mjs",
+    "build": "next build",
+    "build:sample": "node scripts/run-sample.mjs build",
+    "dev:sample": "node scripts/run-sample.mjs dev",
+    "start": "npx serve out",
+    "seo:check": "node --env-file-if-exists=.env scripts/seo-check.mjs",
+    "목록": "node scripts/list-posts.mjs",
+    "계획": "node scripts/work-plan.mjs",
+    "이미지모으기": "node scripts/collect-images.mjs",
+    "올리기": "node scripts/publish.mjs",
+    "publish": "node scripts/publish.mjs",
+    "popular": "node --env-file-if-exists=.env scripts/fetch-popular.mjs"
+  },
+  "dependencies": {
+    "@notionhq/client": "^2.2.15",
+    "gray-matter": "^4.0.3",
+    "marked": "^18.0.7",
+    "next": "^15.1.6",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.5",
+    "@types/react": "^19.0.7",
+    "@types/react-dom": "^19.0.3",
+    "typescript": "^5.7.3"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}
