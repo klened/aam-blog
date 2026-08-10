@@ -315,11 +315,16 @@ export function coverFor(coverImage: string, category: string): string {
 export const LOGO = { src: '/images/logo.png', width: 560, height: 165 } as const
 
 /**
- * 글 하단 CTA에 쓰는 사진. 지금은 브랜드 카드를 쓴다.
- * 실제 쇼룸·엔지니어 사진이 준비되면 바꾼다. 사진을 바꾸면 크기도 함께 고친다.
+ * 글 하단 CTA에 쓰는 배너.
+ *
+ * 로고만 있던 자리를 홈페이지에서 쓰는 「시제품 제작 필요하세요?」 배너로 바꿨다.
+ * 담당자 얼굴과 실제 출력물이 함께 들어 있어, 로고보다 「사람이 답한다」가 드러난다.
+ *
+ * 크기를 함께 적어 둔다. CTA는 클라이언트에서 도는 부품이라 파일을 열어 크기를
+ * 읽을 수 없다. 배너를 바꾸면 이 값도 함께 고친다.
  */
-export const TEAM_PHOTO = '/images/brand-card.png'
-export const TEAM_PHOTO_SIZE = { width: 1559, height: 819 } as const
+export const TEAM_PHOTO = '/images/cta-banner.webp'
+export const TEAM_PHOTO_SIZE = { width: 966, height: 242 } as const
 
 export const ORG = {
   name: '더블에이엠',

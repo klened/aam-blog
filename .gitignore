@@ -20,6 +20,8 @@ content/popular.json
 /public/images/*
 !/public/images/logo.png
 !/public/images/brand-card.png
+!/public/images/cta-banner.webp
+!/public/images/cta-banner@480.webp
 !/public/images/공통/
 !/public/images/팀/
 

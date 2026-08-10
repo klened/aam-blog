@@ -111,7 +111,7 @@ export function CtaBlock({
           src={photoSrc || TEAM_PHOTO}
           width={TEAM_PHOTO_SIZE.width}
           height={TEAM_PHOTO_SIZE.height}
-          alt={`${ORG.name} 3D프린팅 솔루션`}
+          alt={`${ORG.name} 기술지원팀 — 시제품 제작이 필요하신가요`}
           loading="lazy"
           decoding="async"
         />
