@@ -8,7 +8,6 @@ import { categorySlug } from '@/lib/content'
 import { JsonLd } from '@/components/JsonLd'
 import { PostBody } from '@/components/PostBody'
 import { Toc } from '@/components/Toc'
-import { AuthorBlock } from '@/components/AuthorBlock'
 import { CtaBlock } from '@/components/CtaBlock'
 import { HookBlock } from '@/components/HookBlock'
 import { RelatedPosts } from '@/components/RelatedPosts'
@@ -257,7 +256,6 @@ export default async function PostPage({ params }: Params) {
             ask={ask}
             photoSrc={imageSrc(TEAM_PHOTO)}
           />
-          <AuthorBlock post={meta} />
 
           {faq && (
             <section className="post-faq" dangerouslySetInnerHTML={{ __html: faq }} />
