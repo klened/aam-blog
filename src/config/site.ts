@@ -113,7 +113,7 @@ export function resolveOwner(
  */
 export const VERIFY = {
   google: process.env.NEXT_PUBLIC_GOOGLE_VERIFY ?? '7o5zFd_vJovzcek8knV3yl4c53GFdARDspVAQcSwT8k',
-  naver: process.env.NEXT_PUBLIC_NAVER_VERIFY ?? '',
+  naver: process.env.NEXT_PUBLIC_NAVER_VERIFY ?? 'd90efe63dd476c679a9e1445e2a99484ee6fcac7',
 } as const
 
 /**
