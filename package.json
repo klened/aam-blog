@@ -1,8 +1,8 @@
 {
-  "name": "dowon-insight-blog",
+  "name": "aam-3dprinting-insight-blog",
   "version": "1.0.0",
   "private": true,
-  "description": "노무법인 도원 인사노무 인사이트 — Next.js 정적 블로그 (Notion CMS)",
+  "description": "더블에이엠 3D프린팅 인사이트 — Next.js 정적 블로그 (마크다운)",
   "scripts": {
     "dev": "next dev",
     "prebuild": "node scripts/collect-images.mjs && node scripts/fetch-popular.mjs",
