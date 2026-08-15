@@ -3,7 +3,7 @@
   "configurations": [
     {
       "name": "aam-blog",
-      "runtimeExecutable": "npm",
+      "runtimeExecutable": "npm.cmd",
       "runtimeArgs": ["run", "dev"],
       "port": 3000
     }
