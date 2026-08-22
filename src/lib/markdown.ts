@@ -193,6 +193,14 @@ function renderCallouts(
  * 마크다운 제목 레벨을 한 단계 낮춰 렌더링한다.
  * 글 제목이 이미 h1이므로 본문의 `#`은 h2가 된다. 노션 백엔드와 동일한 규칙이다.
  */
+function normalizeFaqDirectives(md: string): string {
+  return md.replace(
+    /^:::faq[ \t]*\r?\n([^\r\n]+)\r?\n([\s\S]*?)^:::[ \t]*$/gm,
+    (_block, question: string, answer: string) =>
+      `## ${question.trim()}\n\n${answer.trim()}`
+  )
+}
+
 function renderMarkdown(md: string, author = ''): { html: string; toc: TocItem[]; faqs: FaqItem[] } {
   const used = new Set<string>()
   const toc: TocItem[] = []
@@ -270,8 +278,9 @@ function renderMarkdown(md: string, author = ''): { html: string; toc: TocItem[]
 
   // 예시 블록은 안쪽 내용을 따로 렌더링한 뒤 자리표시자로 바꿔 두었다가 마지막에 되돌린다.
   const sub = new Marked({ gfm: true, breaks: false })
+  const normalized = normalizeFaqDirectives(md)
   const { md: prepared, slots } = renderCallouts(
-    md,
+    normalized,
     (s) => sub.parse(s, { async: false }) as string,
     author
   )
@@ -281,7 +290,7 @@ function renderMarkdown(md: string, author = ''): { html: string; toc: TocItem[]
     html = html.replace(new RegExp(`<p class="post-p">\\s*${token}\\s*</p>`), block).replace(token, block)
   }
 
-  const faqs = extractFaqFromMarkdown(md)
+  const faqs = extractFaqFromMarkdown(normalized)
   return { html, toc, faqs }
 }
 
