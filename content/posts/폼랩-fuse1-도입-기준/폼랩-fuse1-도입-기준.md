@@ -97,7 +97,7 @@ Fuse Sift로는 **5~10분이면 부품을 꺼내고 분말을 회수**합니다.
   <polygon points="190,232 184,246 196,246" fill="#015d75"/>
   <text x="365" y="325" font-size="18" font-weight="700" fill="#015d75" text-anchor="middle">회수한 분말 + 새 분말을 섞어 되돌립니다</text>
   <text x="365" y="352" font-size="16" fill="#9ca3af" text-anchor="middle">이 비율이 리프레시율입니다</text>
-  <text x="1160" y="385" font-size="15" fill="#9ca3af" text-anchor="end">blog.loied.com</text>
+  <text x="1160" y="385" font-size="15" fill="#9ca3af" text-anchor="end">blog.aamkorea.co.kr</text>
 </svg>
 </div>
 

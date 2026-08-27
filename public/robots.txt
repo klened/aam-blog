@@ -15,4 +15,4 @@ Allow: /
 Content-Signal: search=yes, ai-input=yes, ai-train=no
 
 # 정적 파일이라 주소가 그대로 박힌다. 도메인을 옮기면 이 줄도 함께 고친다.
-Sitemap: https://blog.loied.com/blog/sitemap.xml
+Sitemap: https://blog.aamkorea.co.kr/blog/sitemap.xml

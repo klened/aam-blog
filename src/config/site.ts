@@ -10,7 +10,7 @@ export const SITE = {
    * 기본값을 실제 주소로 둔다. 환경변수를 빠뜨려도 canonical 주소와 사이트맵이
    * 틀리지 않게 하기 위해서다. 호스팅을 옮길 때 대시보드에서 설정할 것이 하나 줄어든다.
    */
-  url: (process.env.NEXT_PUBLIC_SITE_URL || 'https://blog.loied.com').replace(/\/$/, ''),
+  url: (process.env.NEXT_PUBLIC_SITE_URL || 'https://blog.aamkorea.co.kr').replace(/\/$/, ''),
 
   /** 블로그가 놓이는 경로. next.config 및 폴더 구조와 일치해야 한다. */
   basePath: '/blog',
@@ -26,9 +26,8 @@ export const SITE = {
 /**
  * 같은 창에서 이어 보게 둘 주소.
  *
- * 블로그 자신과 회사 홈페이지가 여기 든다. 블로그는 loied.com 에 두고
- * 견적·스토어 같은 CTA는 aamkorea.co.kr 로 보내므로 둘 다 우리 것으로 친다.
- * 도메인을 또 옮기면 SITE.url 만 고치면 되고 이 목록은 그대로 둔다.
+ * 블로그 자신과 회사 홈페이지가 여기 든다. 지금은 둘 다 aamkorea.co.kr 이지만,
+ * 블로그를 다른 도메인으로 옮겨도 SITE.url 만 고치면 되고 이 목록은 그대로 둔다.
  */
 const OWN_HOSTS = [new URL(SITE.url).hostname, 'aamkorea.co.kr'] as const
 

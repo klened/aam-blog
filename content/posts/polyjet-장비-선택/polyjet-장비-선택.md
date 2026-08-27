@@ -116,7 +116,7 @@ PolyJet을 알아보면 대개 「풀컬러 장비」로 소개됩니다. 틀린
   <text x="985" y="246" font-size="17" fill="#374151" text-anchor="middle">중·대형 → 255~490mm</text>
   <text x="985" y="276" font-size="17" fill="#b91c1c" text-anchor="middle">높이는 200mm로 묶임</text>
   <text x="600" y="360" font-size="17" fill="#9ca3af" text-anchor="middle">색·소재·크기 중 하나만 올라가도 급이 바뀝니다. 가장 빡빡한 조건에 맞추십시오.</text>
-  <text x="1160" y="390" font-size="15" fill="#9ca3af" text-anchor="end">blog.loied.com</text>
+  <text x="1160" y="390" font-size="15" fill="#9ca3af" text-anchor="end">blog.aamkorea.co.kr</text>
 </svg>
 </div>
 
