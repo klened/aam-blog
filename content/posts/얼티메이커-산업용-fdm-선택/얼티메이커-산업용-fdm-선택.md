@@ -83,7 +83,7 @@ FDM 소재는 크게 둘로 나뉩니다. 챔버가 필요한 것과 아닌 것�
   <text x="890" y="262" font-size="17" fill="#374151" text-anchor="middle">조형 공간을 데워</text>
   <text x="890" y="288" font-size="17" fill="#374151" text-anchor="middle">부품이 휘는 것을 막습니다</text>
   <text x="890" y="336" font-size="16" fill="#c65100" text-anchor="middle">실사용 부품을 만들 때</text>
-  <text x="1160" y="392" font-size="15" fill="#9ca3af" text-anchor="end">blog.aamkorea.co.kr</text>
+  <text x="1160" y="392" font-size="15" fill="#9ca3af" text-anchor="end">blog.loied.com</text>
 </svg>
 </div>
 

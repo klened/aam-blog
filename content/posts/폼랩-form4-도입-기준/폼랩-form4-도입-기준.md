@@ -118,7 +118,7 @@ Form 4는 세 가지 패키지로 팔립니다. 헷갈리기 쉬운데 **프린�
   <text x="985" y="264" font-size="18" font-weight="700" fill="#c65100" text-anchor="middle">+ 오픈 소재 모드</text>
   <text x="985" y="315" font-size="16" fill="#c65100" text-anchor="middle">소재를 여러 개 돌리거나</text>
   <text x="985" y="338" font-size="16" fill="#c65100" text-anchor="middle">타사 레진을 쓸 때</text>
-  <text x="1160" y="405" font-size="15" fill="#9ca3af" text-anchor="end">blog.aamkorea.co.kr</text>
+  <text x="1160" y="405" font-size="15" fill="#9ca3af" text-anchor="end">blog.loied.com</text>
 </svg>
 </div>
 

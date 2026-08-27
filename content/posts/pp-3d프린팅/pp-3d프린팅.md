@@ -113,7 +113,7 @@ PP 필라멘트가 있습니다. 다만 조건이 까다롭습니다.
   <text x="980" y="230" font-size="17" fill="#374151" text-anchor="middle">싸고 빠릅니다</text>
   <text x="980" y="260" font-size="17" fill="#b91c1c" text-anchor="middle">내화학·힌지 시험은 안 됩니다</text>
   <text x="980" y="298" font-size="17" font-weight="700" fill="#4b5563" text-anchor="middle">형상·조립 확인용</text>
-  <text x="1160" y="368" font-size="15" fill="#9ca3af" text-anchor="end">blog.aamkorea.co.kr</text>
+  <text x="1160" y="368" font-size="15" fill="#9ca3af" text-anchor="end">blog.loied.com</text>
 </svg>
 </div>
 

@@ -1,5 +1,6 @@
 import React from 'react'
 import type { RichTextItemResponse } from '@notionhq/client/build/src/api-endpoints'
+import { isExternalHref } from '@/config/site'
 
 /** 노션 리치텍스트(굵게·링크·코드 등)를 그대로 HTML로 옮긴다. */
 export function RichText({ value }: { value: RichTextItemResponse[] | undefined }) {
@@ -18,7 +19,7 @@ export function RichText({ value }: { value: RichTextItemResponse[] | undefined 
         if (annotations.strikethrough) node = <s>{node}</s>
 
         if (href) {
-          const external = /^https?:\/\//.test(href) && !href.includes('aamkorea.co.kr')
+          const external = isExternalHref(href)
           node = (
             <a
               href={href}

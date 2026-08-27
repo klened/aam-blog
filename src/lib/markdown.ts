@@ -5,6 +5,7 @@ import { Marked } from 'marked'
 import type { PostMeta } from './notion'
 import type { FaqItem, TocItem } from './blocks'
 import { toAnchorId, toSlug } from './slug'
+import { isExternalHref } from '@/config/site'
 import { imageSize, imageSrc, srcSet as srcSet2 } from './imageSize'
 import { member, resolveOwner } from '@/config/site'
 import { SHOW_DRAFTS } from './drafts'
@@ -269,7 +270,7 @@ function renderMarkdown(md: string, author = ''): { html: string; toc: TocItem[]
       },
       link({ href, title, tokens }) {
         const text = this.parser.parseInline(tokens)
-        const external = /^https?:\/\//.test(href) && !href.includes('aamkorea.co.kr')
+        const external = isExternalHref(href)
         const attrs = external ? ' target="_blank" rel="noopener noreferrer"' : ''
         return `<a href="${href}"${title ? ` title="${title}"` : ''}${attrs}>${text}</a>`
       },

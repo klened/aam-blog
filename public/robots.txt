@@ -14,4 +14,5 @@ Allow: /
 # ai-train : 모델 학습에 쓰는 것. 인용으로 이어지지 않으므로 막는다.
 Content-Signal: search=yes, ai-input=yes, ai-train=no
 
-Sitemap: https://blog.aamkorea.co.kr/blog/sitemap.xml
+# 정적 파일이라 주소가 그대로 박힌다. 도메인을 옮기면 이 줄도 함께 고친다.
+Sitemap: https://blog.loied.com/blog/sitemap.xml
