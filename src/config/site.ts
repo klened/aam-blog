@@ -388,7 +388,7 @@ export const CTA_PRESETS = {
     chat: false,
   },
   상담: {
-    heading: '사례에 맞는 답이 필요하시면 물어보세요',
+    heading: '3D프린팅 출력이 필요하시면 문의해 주세요',
     body: '담당 엔지니어가 부품 조건을 확인한 뒤 회신드립니다.',
     buttonText: '상담 요청하기',
     href: 'https://aamkorea.co.kr/request',
