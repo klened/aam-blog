@@ -34,7 +34,7 @@ const API = 'https://api.cloudflare.com/client/v4'
  * 통계를 읽는 권한이지 계정 목록을 보는 권한이 아니다. 계정을 찾겠다고
  * 토큰 권한을 넓히는 것은 앞뒤가 바뀐 일이라, 번호를 적어 둔다.
  */
-const ACCOUNT_ID = process.env.CF_ACCOUNT_ID || '2499467c3f6db7b4efcf088abcc20989'
+const ACCOUNT_ID = process.env.CF_ACCOUNT_ID || '2166526a955439000481b67d1cc1c7a9' // kleneed7 계정(AAM 블로그). 대시보드 주소에 드러나는 값이라 비밀이 아니다.
 
 /**
  * Web Analytics 사이트 표식.
@@ -46,7 +46,7 @@ const ACCOUNT_ID = process.env.CF_ACCOUNT_ID || '2499467c3f6db7b4efcf088abcc2098
  * 대시보드 → Web Analytics → 사이트의 「Manage site」 주소 끝에 붙어 있다.
  *   .../web-analytics/edit/<이 값>
  */
-const SITE_TAG = process.env.CF_SITE_TAG || 'b1470589c9554e01a5f89c115820036a'
+const SITE_TAG = process.env.CF_SITE_TAG || '291a064cdb87499c8c9d6ead9c82279d' // blog.aamkorea.co.kr Web Analytics 사이트 태그(kleneed7 계정). Manage site 주소 끝값.
 /** 며칠치를 볼 것인가. 너무 길면 옛 글이 계속 위에 남고, 짧으면 들쭉날쭉하다. */
 const DAYS = 30
 /** 몇 편을 적어 둘 것인가. 글 아래에는 셋만 쓰지만 여유를 둔다. */

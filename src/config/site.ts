@@ -144,7 +144,9 @@ export const VERIFY = {
  *                 문의까지 갔는가」이므로 끊어서 얻을 것이 없다.
  */
 export const ANALYTICS = {
-  beaconToken: process.env.NEXT_PUBLIC_CF_BEACON_TOKEN ?? '',
+  beaconToken: process.env.NEXT_PUBLIC_CF_BEACON_TOKEN ?? '97969b1016fc4cf39b6c69f541902697',
+  // beaconToken 기본값은 kleneed7 계정의 blog.aamkorea.co.kr Web Analytics 토큰이다.
+  // 공개 HTML에 박히는 공개 값이라 여기 적어 둔다. 환경변수를 주면 그게 이긴다.
   gaId: process.env.NEXT_PUBLIC_GA_ID ?? 'G-WDL2Q601K0',
 } as const
 // gaId 기본값은 홈페이지(aamkorea.co.kr)가 쓰는 GA4와 같은 값이다. 위 설명대로
