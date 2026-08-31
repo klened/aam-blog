@@ -145,8 +145,11 @@ export const VERIFY = {
  */
 export const ANALYTICS = {
   beaconToken: process.env.NEXT_PUBLIC_CF_BEACON_TOKEN ?? '',
-  gaId: process.env.NEXT_PUBLIC_GA_ID ?? '',
+  gaId: process.env.NEXT_PUBLIC_GA_ID ?? 'G-WDL2Q601K0',
 } as const
+// gaId 기본값은 홈페이지(aamkorea.co.kr)가 쓰는 GA4와 같은 값이다. 위 설명대로
+// 같은 측정 ID라야 블로그를 읽고 홈페이지로 넘어간 사람이 한 사람으로 이어진다.
+// 비밀값이 아니라 공개 HTML에 박히는 값이라 여기 적어 둔다. 환경변수를 주면 그게 이긴다.
 
 /**
  * 홈페이지에 이미 있는 도구·안내 페이지.
