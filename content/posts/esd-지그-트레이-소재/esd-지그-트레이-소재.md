@@ -116,3 +116,9 @@ Stratasys도 ESD용 출력 소재를 전자 제조용 지그, 고정구, 보관 
 가능합니다. 먼저 1개를 제작해 부품 안착과 접지, 표면 저항을 확인한 뒤 필요한 수량을 정할 수 있습니다.
 
 ESD 지그와 트레이는 소재 이름만으로 완성되지 않습니다. 요구 저항 범위와 접지 경로, 측정 방법이 함께 있어야 합니다. 현장 규격과 담을 부품 정보를 보내면 시험용 1개의 소재와 형상을 먼저 검토할 수 있습니다.
+
+<!-- hub-backlink -->
+
+---
+
+**관련 묶음:** [3D프린팅 소재 총정리](https://aamkorea.co.kr/information/?bmode=view&idx=173739759&t=board) · [지그·치공구 총정리](https://aamkorea.co.kr/information/?bmode=view&idx=173768933&t=board)
