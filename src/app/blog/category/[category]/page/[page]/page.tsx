@@ -1,12 +1,19 @@
 import type { Metadata } from 'next'
 import { notFound } from 'next/navigation'
 import Link from 'next/link'
-import { categoryFromSlug, categorySlug, listCategories, listPosts } from '@/lib/content'
+import {
+  categoryFromSlug,
+  categorySlug,
+  listCategories,
+  listPosts,
+  listSubcategories,
+} from '@/lib/content'
 import { SITE, categoryIcon, categoryIntro } from '@/config/site'
 import { categoryUrl } from '@/lib/seo'
 import { ChannelTalk } from '@/components/ChannelTalk'
 import { CategoryNav } from '@/components/CategoryNav'
 import { PostList, PER_PAGE, paginate } from '@/components/PostList'
+import { SubcategoryNav } from '@/components/SubcategoryNav'
 
 type Params = { params: Promise<{ category: string; page: string }> }
 
@@ -32,7 +39,8 @@ async function resolve(slug: string) {
   const name = categoryFromSlug(slug, cats.map((c) => c.name))
   if (!name) return null
   const posts = (await listPosts()).filter((p) => p.category === name)
-  return { name, posts, cats }
+  const subcategories = await listSubcategories(name)
+  return { name, posts, cats, subcategories }
 }
 
 export async function generateMetadata({ params }: Params): Promise<Metadata> {
@@ -52,7 +60,7 @@ export default async function CategoryPaged({ params }: Params) {
   const found = await resolve(category)
   if (!found || !Number.isInteger(n) || n < 2) notFound()
 
-  const { name, posts, cats } = found
+  const { name, posts, cats, subcategories } = found
   const result = paginate(posts, n)
   if (posts.length > 0 && n > result.totalPages) notFound()
   const base = `${SITE.basePath}/category/${encodeURIComponent(categorySlug(name))}`
@@ -83,6 +91,8 @@ export default async function CategoryPaged({ params }: Params) {
               {categoryIntro(name)} {result.totalPages}쪽 중 {result.page}쪽입니다.
             </p>
           </header>
+
+          <SubcategoryNav category={name} items={subcategories} />
 
           <PostList
             posts={result.items}

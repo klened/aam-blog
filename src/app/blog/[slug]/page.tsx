@@ -163,6 +163,17 @@ export default async function PostPage({ params }: Params) {
                   <i aria-hidden="true">{categoryIcon(meta.category)}</i>
                   {meta.category}
                 </Link>
+                {meta.subcategory && (
+                  <>
+                    <span aria-hidden="true"> › </span>
+                    <Link
+                      className="post-subcat"
+                      href={`${SITE.basePath}/category/${encodeURIComponent(categorySlug(meta.category))}/${encodeURIComponent(categorySlug(meta.subcategory))}/`}
+                    >
+                      {meta.subcategory}
+                    </Link>
+                  </>
+                )}
                 <span aria-hidden="true"> · </span>
               </>
             )}

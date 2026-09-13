@@ -56,6 +56,7 @@ type FrontMatter = {
   슬러그?: string
   요약?: string
   카테고리?: string
+  세부분류?: string
   태그?: string[] | string
   상태?: string
   노출?: boolean
@@ -432,6 +433,7 @@ function toMeta(fm: FrontMatter, fallbackSlug: string, fileMtime: Date, body = '
     title,
     summary: (fm.요약 || '').trim(),
     category: (fm.카테고리 || '').trim(),
+    subcategory: (fm.세부분류 || '').trim(),
     tags,
     publishedAt: asDate(fm.발행일) || fileMtime.toISOString().slice(0, 10),
     updatedAt: asDate(fm.최종수정일) || asDate(fm.발행일) || fileMtime.toISOString().slice(0, 10),

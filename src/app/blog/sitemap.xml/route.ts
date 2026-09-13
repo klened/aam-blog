@@ -1,6 +1,6 @@
-import { categorySlug, listCategories, listPosts } from '@/lib/content'
+import { categorySlug, listCategories, listPosts, listSubcategories } from '@/lib/content'
 import { PER_PAGE } from '@/components/PostList'
-import { categoryUrl, listUrl, pageUrl, postUrl, sectionUrl } from '@/lib/seo'
+import { categoryUrl, listUrl, pageUrl, postUrl, sectionUrl, subcategoryUrl } from '@/lib/seo'
 import { MEMBERS } from '@/config/site'
 
 export const dynamic = 'force-static'
@@ -39,6 +39,18 @@ export async function GET() {
         loc: categoryUrl(slug, n),
         lastmod: catLast,
         priority: n === 1 ? '0.8' : '0.4',
+      })
+    }
+
+    const subcategories = await listSubcategories(c.name)
+    for (const subcategory of subcategories) {
+      const inSubcategory = inCat.filter((p) => p.subcategory === subcategory.name)
+      const subcategoryLast =
+        inSubcategory[0]?.updatedAt || inSubcategory[0]?.publishedAt || catLast
+      urls.push({
+        loc: subcategoryUrl(c.name, subcategory.name),
+        lastmod: subcategoryLast,
+        priority: '0.6',
       })
     }
   }

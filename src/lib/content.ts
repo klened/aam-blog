@@ -4,6 +4,7 @@ import type { NBlock, PostMeta } from './notion'
 import { getPostBySlug, getPublishedPosts } from './notion'
 import { isSampleMode } from './sample'
 import { firstParagraphOf, hasMarkdownPosts, readMarkdownPosts } from './markdown'
+import { subcategoryRank } from '@/config/site'
 import {
   buildAnchorMap,
   buildToc,
@@ -107,9 +108,21 @@ export function anchorsOf(content: PostContent): Map<string, string> {
 
 /** 같은 카테고리의 다른 글을 최대 n개 고른다. 없으면 최신 글로 채운다. */
 export function pickRelated(all: PostMeta[], current: PostMeta, n = 3): PostMeta[] {
-  const same = all.filter((p) => p.slug !== current.slug && p.category === current.category)
+  const sameSubcategory = all.filter(
+    (p) =>
+      p.slug !== current.slug &&
+      !!current.subcategory &&
+      p.category === current.category &&
+      p.subcategory === current.subcategory
+  )
+  const sameCategory = all.filter(
+    (p) =>
+      p.slug !== current.slug &&
+      p.category === current.category &&
+      p.subcategory !== current.subcategory
+  )
   const rest = all.filter((p) => p.slug !== current.slug && p.category !== current.category)
-  return [...same, ...rest].slice(0, n)
+  return [...sameSubcategory, ...sameCategory, ...rest].slice(0, n)
 }
 
 /**
@@ -162,4 +175,27 @@ export async function listCategories(): Promise<{ name: string; count: number }[
   return [...counts.entries()]
     .map(([name, count]) => ({ name, count }))
     .sort((a, b) => b.count - a.count)
+}
+
+export function subcategoryFromSlug(slug: string, subcategories: string[]): string | null {
+  return categoryFromSlug(slug, subcategories)
+}
+
+/** 선택한 상위 분류에서 실제로 쓰인 세부분류와 글 수를 돌려준다. */
+export async function listSubcategories(
+  category: string
+): Promise<{ name: string; count: number }[]> {
+  const posts = await listPosts()
+  const counts = new Map<string, number>()
+  for (const p of posts) {
+    if (p.category !== category || !p.subcategory) continue
+    counts.set(p.subcategory, (counts.get(p.subcategory) ?? 0) + 1)
+  }
+  return [...counts.entries()]
+    .map(([name, count]) => ({ name, count }))
+    .sort(
+      (a, b) =>
+        subcategoryRank(category, a.name) - subcategoryRank(category, b.name) ||
+        a.name.localeCompare(b.name, 'ko')
+    )
 }

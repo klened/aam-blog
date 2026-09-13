@@ -1,6 +1,7 @@
 import { ORG, SITE } from '@/config/site'
 import type { PostMeta } from './notion'
 import type { FaqItem } from './blocks'
+import { categorySlug } from './slug'
 
 /** 구조화 데이터에는 상대경로를 쓸 수 없으므로 절대주소로 바꾼다. */
 export function absoluteUrl(path: string): string {
@@ -16,6 +17,10 @@ export function postUrl(slug: string): string {
 export function categoryUrl(slug: string, page = 1): string {
   const base = `${SITE.url}${SITE.basePath}/category/${encodeURIComponent(slug)}/`
   return page > 1 ? `${base}page/${page}/` : base
+}
+
+export function subcategoryUrl(category: string, subcategory: string): string {
+  return `${categoryUrl(categorySlug(category))}${encodeURIComponent(categorySlug(subcategory))}/`
 }
 
 export function pageUrl(page = 1): string {
@@ -83,7 +88,12 @@ export function breadcrumbJsonLd(post: PostMeta) {
   const items = [
     { name: ORG.name, item: `${ORG.url}/` },
     { name: SITE.name, item: listUrl() },
-    ...(post.category ? [{ name: post.category, item: listUrl() }] : []),
+    ...(post.category
+      ? [{ name: post.category, item: categoryUrl(categorySlug(post.category)) }]
+      : []),
+    ...(post.category && post.subcategory
+      ? [{ name: post.subcategory, item: subcategoryUrl(post.category, post.subcategory) }]
+      : []),
     { name: post.title, item: postUrl(post.slug) },
   ]
   return {

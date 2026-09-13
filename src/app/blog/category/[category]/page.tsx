@@ -1,13 +1,20 @@
 import type { Metadata } from 'next'
 import { notFound } from 'next/navigation'
 import Link from 'next/link'
-import { categoryFromSlug, categorySlug, listCategories, listPosts } from '@/lib/content'
+import {
+  categoryFromSlug,
+  categorySlug,
+  listCategories,
+  listPosts,
+  listSubcategories,
+} from '@/lib/content'
 import { ORG, SITE, categoryIcon, categoryIntro } from '@/config/site'
 import { categoryUrl, listUrl, postUrl } from '@/lib/seo'
 import { JsonLd } from '@/components/JsonLd'
 import { ChannelTalk } from '@/components/ChannelTalk'
 import { CategoryNav } from '@/components/CategoryNav'
 import { PostList, paginate } from '@/components/PostList'
+import { SubcategoryNav } from '@/components/SubcategoryNav'
 
 type Params = { params: Promise<{ category: string }> }
 
@@ -24,7 +31,8 @@ async function resolve(slug: string) {
   const name = categoryFromSlug(slug, cats.map((c) => c.name))
   if (!name) return null
   const posts = (await listPosts()).filter((p) => p.category === name)
-  return { name, posts, cats }
+  const subcategories = await listSubcategories(name)
+  return { name, posts, cats, subcategories }
 }
 
 export async function generateMetadata({ params }: Params): Promise<Metadata> {
@@ -53,7 +61,7 @@ export default async function CategoryPage({ params }: Params) {
   const found = await resolve(category)
   if (!found) notFound()
 
-  const { name, posts, cats } = found
+  const { name, posts, cats, subcategories } = found
   const { items, page, totalPages } = paginate(posts, 1)
   const base = `${SITE.basePath}/category/${encodeURIComponent(categorySlug(name))}`
 
@@ -109,6 +117,8 @@ export default async function CategoryPage({ params }: Params) {
             </h1>
             <p>{categoryIntro(name)}</p>
           </header>
+
+          <SubcategoryNav category={name} items={subcategories} />
 
           <PostList posts={items} page={page} totalPages={totalPages} basePath={base} />
         </div>

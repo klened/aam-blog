@@ -90,6 +90,7 @@ const SAMPLE_META: PostMeta[] = [
     summary:
       '산재를 신청해도 대부분의 중소 사업장은 보험료가 오르지 않습니다. 개별실적요율이 30인 이상 사업장에만 적용되기 때문입니다.',
     category: '산업재해',
+    subcategory: '',
     tags: ['중소기업', '사례'],
     publishedAt: '2026-07-23',
     updatedAt: '2026-07-30',
@@ -120,6 +121,7 @@ const SAMPLE_META: PostMeta[] = [
     summary:
       '제비율표대로 보험료를 계상하고도 준공 정산에서 3천만원을 반납한 사례입니다. 원인은 신고 누락 하나였습니다.',
     category: '고용산재 확정정산',
+    subcategory: '',
     tags: ['건설업', '사례'],
     publishedAt: '2026-07-27',
     updatedAt: '2026-07-27',

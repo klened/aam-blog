@@ -1,3 +1,21 @@
 # 주소 넘기기. Cloudflare 가 이 파일을 읽는다.
 
 /    /blog/    301
+
+# 2026-09 카테고리 개편. 글 주소는 유지하고 예전 분류 주소만 새 허브로 넘긴다.
+/blog/category/3D프린터-도입-가이드/    /blog/category/3D프린터-도입/    301
+/blog/category/3D프린터-도입-가이드/*   /blog/category/3D프린터-도입/    301
+/blog/category/SLA·레진-프린팅/         /blog/category/공정·소재-선택/     301
+/blog/category/SLA·레진-프린팅/*        /blog/category/공정·소재-선택/     301
+/blog/category/SLS·분말-프린팅/         /blog/category/공정·소재-선택/     301
+/blog/category/SLS·분말-프린팅/*        /blog/category/공정·소재-선택/     301
+/blog/category/FDM-프린팅/              /blog/category/공정·소재-선택/     301
+/blog/category/FDM-프린팅/*             /blog/category/공정·소재-선택/     301
+/blog/category/PolyJet·풀컬러/           /blog/category/공정·소재-선택/     301
+/blog/category/PolyJet·풀컬러/*          /blog/category/공정·소재-선택/     301
+/blog/category/소재-가이드/              /blog/category/공정·소재-선택/     301
+/blog/category/소재-가이드/*             /blog/category/공정·소재-선택/     301
+/blog/category/활용-사례/                /blog/category/산업별-제작-사례/   301
+/blog/category/활용-사례/*               /blog/category/산업별-제작-사례/   301
+/blog/category/3D프린팅-일반/            /blog/category/설계·품질-문제/     301
+/blog/category/3D프린팅-일반/*           /blog/category/설계·품질-문제/     301

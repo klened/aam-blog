@@ -23,6 +23,7 @@ export type Post = {
   /** meta description으로 쓰인다. 비어 있으면 첫 문단에서 뽑는다. */
   summary: string
   category: string
+  subcategory: string
   tags: string[]
   publishedAt: string
   updatedAt: string
@@ -190,6 +191,7 @@ export async function getPublishedPosts(): Promise<PostMeta[]> {
       title,
       summary: readText(props, '요약'),
       category: readText(props, '카테고리'),
+      subcategory: readText(props, '세부분류'),
       tags: readMulti(props, '태그'),
       publishedAt: published,
       updatedAt: updated,
@@ -254,7 +256,19 @@ export async function getPostBySlug(slug: string): Promise<Post | null> {
 
 /** 같은 카테고리의 다른 글을 최대 n개 고른다. 없으면 최신 글로 채운다. */
 export function pickRelated(all: PostMeta[], current: PostMeta, n = 3): PostMeta[] {
-  const same = all.filter((p) => p.slug !== current.slug && p.category === current.category)
+  const sameSubcategory = all.filter(
+    (p) =>
+      p.slug !== current.slug &&
+      !!current.subcategory &&
+      p.category === current.category &&
+      p.subcategory === current.subcategory
+  )
+  const sameCategory = all.filter(
+    (p) =>
+      p.slug !== current.slug &&
+      p.category === current.category &&
+      p.subcategory !== current.subcategory
+  )
   const rest = all.filter((p) => p.slug !== current.slug && p.category !== current.category)
-  return [...same, ...rest].slice(0, n)
+  return [...sameSubcategory, ...sameCategory, ...rest].slice(0, n)
 }
