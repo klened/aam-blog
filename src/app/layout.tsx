@@ -49,7 +49,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
         <header className="site-header">
           <div className="header-inner">
             <div className="header-left">
-              <a className="brand" href={ORG.url}>
+              <Link className="brand" href={`${SITE.basePath}/`} aria-label={`${SITE.name} 메인페이지`}>
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
                   className="brand-logo"
@@ -62,7 +62,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
                   |
                 </span>
                 <span className="brand-sub">3D프린팅 인사이트</span>
-              </a>
+              </Link>
             </div>
 
             {/* 「서비스 안내」와 「네이버 블로그」는 뺐다. 회사 홈페이지로는 왼쪽

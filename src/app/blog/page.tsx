@@ -9,6 +9,7 @@ import { PostList, paginate } from '@/components/PostList'
 import { SeasonalBanner } from '@/components/SeasonalBanner'
 import { imageSrc } from '@/lib/imageSize'
 import { SEASONAL } from '@/config/site'
+import { StageExplorer } from '@/components/StageExplorer'
 
 /**
  * 검색결과와 브라우저 탭에 뜨는 제목. 화면 맨 위 표지와 같은 문구를 쓴다.
@@ -61,6 +62,8 @@ export default async function BlogIndex() {
               </p>
             )}
           </header>
+
+          <StageExplorer posts={posts} />
 
           <SeasonalBanner
             imageSrcs={Object.fromEntries(

@@ -23,6 +23,7 @@ content/popular.json
 !/public/images/cta-banner.webp
 !/public/images/cta-banner@480.webp
 !/public/images/공통/
+!/public/images/공통/**
 !/public/images/팀/
 
 # 손으로 만든 임시 스크립트
