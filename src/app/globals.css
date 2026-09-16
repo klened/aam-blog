@@ -116,6 +116,130 @@ a {
 .header-nav a:hover {
   color: var(--navy);
 }
+/* ── 처음 방문한 담당자를 위한 시작 메뉴 ───────── */
+.start-menu {
+  position: relative;
+  display: inline-flex;
+}
+.start-menu-btn {
+  border: 0;
+  border-radius: 9px;
+  background: var(--tint);
+  padding: 8px 11px;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--navy);
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  white-space: nowrap;
+}
+.start-menu-btn:hover,
+.start-menu.is-open .start-menu-btn {
+  background: #e8f4f6;
+}
+.start-menu-caret {
+  width: 0;
+  height: 0;
+  border-left: 4px solid transparent;
+  border-right: 4px solid transparent;
+  border-top: 5px solid currentColor;
+  transition: transform 0.15s ease;
+}
+.start-menu.is-open .start-menu-caret {
+  transform: rotate(180deg);
+}
+.start-menu-panel {
+  position: absolute;
+  top: 100%;
+  right: -245px;
+  z-index: 31;
+  width: min(680px, calc(100vw - 32px));
+  padding-top: 10px;
+  visibility: hidden;
+  opacity: 0;
+  transform: translateY(-4px);
+  transition: opacity 0.14s ease, transform 0.14s ease, visibility 0s 0.14s;
+}
+.start-menu.is-open .start-menu-panel {
+  visibility: visible;
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 0.14s ease, transform 0.14s ease, visibility 0s 0s;
+}
+.start-menu-card {
+  padding: 18px;
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  background: #fff;
+  box-shadow: 0 18px 45px rgba(17, 24, 39, 0.16);
+}
+.start-menu-heading {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 13px;
+  padding: 0 3px;
+}
+.start-menu-heading strong {
+  color: var(--ink);
+  font-size: 16px;
+  letter-spacing: -0.02em;
+}
+.start-menu-heading span {
+  color: var(--muted);
+  font-size: 12px;
+  white-space: nowrap;
+}
+.start-menu-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+}
+.header-nav .start-menu-item {
+  display: block;
+  min-height: 92px;
+  padding: 14px 15px;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  color: var(--ink);
+  background: #fff;
+  text-decoration: none;
+}
+.header-nav .start-menu-item:hover {
+  border-color: #a8d6dc;
+  color: var(--ink);
+  background: #f7fcfc;
+}
+.header-nav .start-menu-item.is-primary {
+  border-color: #b9dfe3;
+  color: #113f46;
+  background: #edf8f8;
+}
+.start-menu-item small,
+.start-menu-item b,
+.start-menu-item span {
+  display: block;
+}
+.start-menu-item small {
+  margin-bottom: 4px;
+  color: var(--navy);
+  font-size: 11px;
+  font-weight: 800;
+}
+.start-menu-item b {
+  margin-bottom: 5px;
+  font-size: 14px;
+  letter-spacing: -0.02em;
+}
+.start-menu-item span {
+  color: #66727a;
+  font-size: 12px;
+  line-height: 1.45;
+}
 /* ── 머리글 분야 메뉴 ────────────────────────── */
 /* 여닫는 것은 CSS 가 한다. 마우스를 올리거나(:hover) 단추에 초점이
    들어오면(:focus-within) 펼쳐진다. 뒤쪽은 손가락으로 쓰는 화면에서
@@ -1278,6 +1402,13 @@ button.cta-button {
 
 /* ── 반응형 ───────────────────────────────────── */
 @media (max-width: 1100px) {
+  .header-nav {
+    gap: 12px;
+    font-size: 15px;
+  }
+  .header-direct {
+    display: none;
+  }
   .layout {
     grid-template-columns: 180px minmax(0, 1fr);
     gap: 32px;
@@ -1398,7 +1529,7 @@ button.cta-button {
   }
   /* 좁은 화면에서는 글자 메뉴를 감추되 문의 단추는 남긴다.
      단추도 <a> 라서 조건 없이 감추면 휴대폰에서 문의 자리가 통째로 사라진다. */
-  .header-nav a:not(.nav-cta) {
+  .header-nav > a:not(.nav-cta) {
     display: none;
   }
   /* 단추는 남기되 「견적·상담」을 떼어 「문의」만 보인다. 그대로 두면
@@ -1415,6 +1546,32 @@ button.cta-button {
      양옆 여백만 남기고 화면에 붙인다. */
   .cat-menu {
     position: static;
+  }
+  .start-menu {
+    position: static;
+  }
+  .start-menu-btn {
+    padding: 7px 9px;
+    font-size: 14px;
+  }
+  .start-menu-panel {
+    left: 16px;
+    right: 16px;
+    width: auto;
+  }
+  .start-menu-card {
+    max-height: calc(100vh - 80px);
+    overflow-y: auto;
+  }
+  .start-menu-heading {
+    display: block;
+  }
+  .start-menu-heading span {
+    display: block;
+    margin-top: 4px;
+  }
+  .start-menu-grid {
+    grid-template-columns: minmax(0, 1fr);
   }
   .cat-menu-panel {
     left: 16px;

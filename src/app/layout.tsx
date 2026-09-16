@@ -6,6 +6,8 @@ import { listCategories } from '@/lib/content'
 import { imageSrc } from '@/lib/imageSize'
 import { ChatNavButton } from '@/components/ChatNavButton'
 import { CategoryMenu } from '@/components/CategoryMenu'
+import { StartMenu } from '@/components/StartMenu'
+import { categorySlug } from '@/lib/slug'
 // 글자체를 먼저 물린다. 파일과 이유는 fonts.css 머리말에 적어 두었다.
 import './fonts.css'
 import './globals.css'
@@ -69,7 +71,20 @@ export default async function RootLayout({ children }: { children: React.ReactNo
                 두 곳 모두 바닥글에는 그대로 있다. */}
             <nav className="header-nav" aria-label="주요 메뉴">
               <Link href={`${SITE.basePath}/`}>전체 글</Link>
+              <StartMenu />
               <CategoryMenu categories={categories} />
+              <Link
+                className="header-direct"
+                href={`${SITE.basePath}/category/${encodeURIComponent(categorySlug('산업별 제작 사례'))}/`}
+              >
+                제작 사례
+              </Link>
+              <Link
+                className="header-direct"
+                href={`${SITE.basePath}/category/${encodeURIComponent(categorySlug('3D프린터 도입'))}/`}
+              >
+                3D프린터 도입
+              </Link>
               <ChatNavButton />
             </nav>
           </div>
