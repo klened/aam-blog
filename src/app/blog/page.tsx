@@ -57,18 +57,6 @@ export default async function BlogIndex() {
         </aside>
 
         <div className="layout-main">
-          {/* 잡지 표지처럼 이름 아래 이번 달 소식을 한 줄 둔다.
-              긴 소개문을 되살리지는 않는다. 검색으로 들어온 사람은 사이트 소개를
-              읽으러 온 것이 아니라 자기 문제를 찾으러 온 것이다. */}
-          <header className="masthead">
-            <h1>{SITE.name}</h1>
-            {MASTHEAD.active && MASTHEAD.issue && (
-              <p className="masthead-issue">
-                <span aria-hidden="true">›</span> {MASTHEAD.issue}
-              </p>
-            )}
-          </header>
-
           <StageExplorer posts={posts} />
 
           <SeasonalBanner

@@ -8,43 +8,98 @@ import { SITE } from '@/config/site'
 const STAGES = [
   {
     id: 'procurement',
-    eyebrow: '01 · 대체 제작',
-    title: '부품 조달이 막혔습니다',
+    eyebrow: '01',
+    title: '부품 조달이 막혔어요',
     description: '단종·긴급 납기·최소 주문 수량 문제부터 확인합니다.',
     resultLabel: '부품 조달이 막혔을 때',
-    image: '/images/공통/start/part-procurement.png',
     slugs: ['부품-조달-3d프린팅-판단', '도면-없는-부품-제작', 'cnc-3d프린팅-비교'],
   },
   {
     id: 'drawing',
-    eyebrow: '02 · 데이터 준비',
-    title: '도면·STL 파일이 없습니다',
+    eyebrow: '02',
+    title: '3D 도면(STL) 파일이 없어요',
     description: '실물·사진·스케치로 3D 데이터를 만드는 방법을 찾습니다.',
     resultLabel: '3D 파일이 없을 때',
-    image: '/images/공통/start/no-drawing.png',
     slugs: ['stl-파일-없을-때-3d모델링', '도면-없는-부품-제작', '역설계-비용-사례-4건'],
   },
   {
     id: 'quote',
-    eyebrow: '03 · 의뢰 준비',
-    title: '비용과 납기가 궁금합니다',
+    eyebrow: '03',
+    title: '비용과 납기가 궁금해요',
     description: '견적 자료, 수량별 단가와 납품 일정을 확인합니다.',
     resultLabel: '견적과 납기를 확인할 때',
-    image: '/images/공통/start/quote-lead-time.png',
     slugs: ['3d프린팅-출력대행-절차', '견적-전에-정할-것', '3d프린팅-소량생산-단가'],
   },
   {
     id: 'technology',
-    eyebrow: '04 · 기술 선택',
-    title: '공정·소재를 정하지 못했습니다',
+    eyebrow: '04',
+    title: '공정·소재를 정하지 못했어요',
     description: '용도와 사용 환경으로 공정과 소재 후보를 좁힙니다.',
     resultLabel: '공정과 소재를 정할 때',
-    image: '/images/공통/start/process-material.png',
     slugs: ['산업용-3d프린터-방식-4가지', 'sla-sls-비교', '3d프린팅-소재-종류'],
   },
 ] as const
 
 type StageId = (typeof STAGES)[number]['id']
+
+function StageIcon({ id }: { id: StageId }) {
+  const common = {
+    viewBox: '0 0 32 32',
+    fill: 'none',
+    stroke: 'currentColor',
+    strokeWidth: 1.8,
+    strokeLinecap: 'round' as const,
+    strokeLinejoin: 'round' as const,
+    'aria-hidden': true,
+  }
+
+  if (id === 'procurement') {
+    return (
+      <span className="stage-explorer-icon">
+        <svg {...common}>
+          <path d="M5.5 11 16 5.5 26.5 11 16 16.5 5.5 11Z" />
+          <path d="M5.5 11v10L16 26.5 26.5 21V11M16 16.5v10" />
+          <path d="m22.5 5.5 4 4M26.5 5.5l-4 4" />
+        </svg>
+      </span>
+    )
+  }
+
+  if (id === 'drawing') {
+    return (
+      <span className="stage-explorer-icon">
+        <svg {...common}>
+          <path d="M8 4.5h10l6 6v17H8Z" />
+          <path d="M18 4.5v6h6M12 16h8M12 20h8" />
+          <path d="M13 24h6" />
+        </svg>
+      </span>
+    )
+  }
+
+  if (id === 'quote') {
+    return (
+      <span className="stage-explorer-icon">
+        <svg {...common}>
+          <circle cx="14" cy="15" r="9" />
+          <path d="M14 10v5l3.5 2M10 4.5h8" />
+          <circle cx="23.5" cy="23" r="4.5" />
+        </svg>
+      </span>
+    )
+  }
+
+  return (
+    <span className="stage-explorer-icon">
+      <svg {...common}>
+        <path d="M5 8h22M5 16h22M5 24h22" />
+        <circle cx="11" cy="8" r="3" />
+        <circle cx="21" cy="16" r="3" />
+        <circle cx="14" cy="24" r="3" />
+      </svg>
+    </span>
+  )
+}
 
 export function StageExplorer({ posts }: { posts: PostMeta[] }) {
   const [activeId, setActiveId] = useState<StageId>('procurement')
@@ -82,8 +137,7 @@ export function StageExplorer({ posts }: { posts: PostMeta[] }) {
                   <strong>{stage.title}</strong>
                   <span>{stage.description}</span>
                 </span>
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img src={stage.image} alt="" width="480" height="384" loading="lazy" decoding="async" />
+                <StageIcon id={stage.id} />
               </button>
             )
           })}
@@ -107,9 +161,17 @@ export function StageExplorer({ posts }: { posts: PostMeta[] }) {
             {selected.map((post, index) => (
               <article className={index === 0 ? 'stage-post is-first' : 'stage-post'} key={post.slug}>
                 <Link href={`${SITE.basePath}/${encodeURIComponent(post.slug)}/`}>
-                  <small>{index === 0 ? '먼저 읽기' : post.category}</small>
-                  <strong>{post.title}</strong>
-                  {(post.gain || post.summary) && <span>{post.gain || post.summary}</span>}
+                  <span className="stage-post-copy">
+                    <small>{index === 0 ? '먼저 읽기' : post.category}</small>
+                    <strong>{post.title}</strong>
+                  </span>
+                  {post.coverImage && (
+                    <span className="stage-post-visual" aria-hidden="true">
+                      {/* 정적 export라 next/image 최적화를 쓰지 않는다. */}
+                      {/* eslint-disable-next-line @next/next/no-img-element */}
+                      <img src={post.coverImage} alt="" loading="lazy" decoding="async" />
+                    </span>
+                  )}
                   <i aria-hidden="true">→</i>
                 </Link>
               </article>

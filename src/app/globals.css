@@ -2920,7 +2920,7 @@ button.cta-button {
 }
 
 .stage-explorer-panel {
-  padding: 15px;
+  padding: 12px;
   border: 1px solid #dce6e1;
   border-radius: 28px;
   background: #f4f8f5;
@@ -2929,23 +2929,23 @@ button.cta-button {
 
 .stage-explorer-grid {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 10px;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 8px;
 }
 
 .stage-explorer-card {
   min-width: 0;
-  min-height: 174px;
-  padding: 23px 22px 20px 25px;
+  min-height: 92px;
+  padding: 13px 13px 13px 15px;
   border: 1px solid #d8e2dd;
-  border-radius: 18px;
+  border-radius: 15px;
   background: #fff;
   color: inherit;
   cursor: pointer;
   display: grid;
-  grid-template-columns: minmax(0, 1fr) 150px;
+  grid-template-columns: minmax(0, 1fr) 36px;
   align-items: center;
-  gap: 12px;
+  gap: 8px;
   overflow: hidden;
   text-align: left;
   transition: transform 0.18s ease, border-color 0.18s ease, box-shadow 0.18s ease,
@@ -2977,36 +2977,51 @@ button.cta-button {
 
 .stage-explorer-copy small {
   display: block;
-  margin-bottom: 9px;
+  margin-bottom: 6px;
   color: #007281;
-  font-size: 12px;
+  font-size: 11px;
   font-weight: 850;
 }
 
 .stage-explorer-copy strong {
-  margin-bottom: 8px;
+  margin-bottom: 0;
   color: #172b2b;
-  font-size: 19px;
-  line-height: 1.35;
+  font-size: 16px;
+  line-height: 1.32;
   letter-spacing: -0.035em;
 }
 
 .stage-explorer-copy > span {
-  color: #64717d;
-  font-size: 13px;
-  line-height: 1.55;
+  display: none;
 }
 
-.stage-explorer-card img {
-  width: 150px;
-  height: 120px;
-  object-fit: contain;
-  object-position: center;
+.stage-explorer-icon {
+  width: 36px;
+  height: 36px;
+  border-radius: 11px;
+  background: #f0f6f4;
+  color: #527c7e;
+  display: grid;
+  place-items: center;
+  transition: color 0.18s ease, background 0.18s ease, transform 0.18s ease;
+}
+
+.stage-explorer-icon svg {
+  width: 23px;
+  height: 23px;
+}
+
+.stage-explorer-card:hover .stage-explorer-icon,
+.stage-explorer-card:focus-visible .stage-explorer-icon,
+.stage-explorer-card.is-active .stage-explorer-icon {
+  background: rgba(0, 114, 129, 0.12);
+  color: #007281;
+  transform: scale(1.06);
 }
 
 .stage-explorer-result {
-  margin-top: 12px;
-  padding: 28px;
+  margin-top: 9px;
+  padding: 24px;
   border: 0;
   border-radius: 20px;
   background: #fff;
@@ -3043,10 +3058,19 @@ button.cta-button {
 
 .stage-post {
   min-width: 0;
-  min-height: 174px;
+  min-height: 184px;
   border: 1px solid #e1e7e4;
   border-radius: 17px;
   background: #fff;
+  transition: transform 0.18s ease, border-color 0.18s ease, box-shadow 0.18s ease,
+    background 0.18s ease;
+}
+
+.stage-post:hover,
+.stage-post:focus-within {
+  border-color: #8fc3be;
+  box-shadow: 0 13px 28px rgba(13, 78, 82, 0.12);
+  transform: translateY(-4px);
 }
 
 .stage-post.is-first {
@@ -3054,13 +3078,29 @@ button.cta-button {
   background: linear-gradient(145deg, #087583, #075563);
 }
 
+.stage-post.is-first:hover,
+.stage-post.is-first:focus-within {
+  border-color: transparent;
+  background: linear-gradient(145deg, #0a8290, #075967);
+  box-shadow: 0 14px 30px rgba(5, 91, 104, 0.24);
+}
+
 .stage-post > a {
   height: 100%;
-  padding: 20px;
-  display: flex;
-  flex-direction: column;
+  padding: 18px;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 92px;
+  grid-template-rows: minmax(0, 1fr) auto;
+  column-gap: 14px;
+  row-gap: 10px;
   color: inherit;
   text-decoration: none;
+}
+
+.stage-post-copy {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
 }
 
 .stage-post small {
@@ -3077,19 +3117,42 @@ button.cta-button {
   letter-spacing: -0.03em;
 }
 
-.stage-post span {
-  color: #6a7680;
-  font-size: 12px;
-  line-height: 1.55;
+.stage-post-visual {
+  grid-column: 2;
+  grid-row: 1 / 3;
+  align-self: stretch;
+  min-height: 116px;
+  overflow: hidden;
+  border: 1px solid rgba(18, 63, 63, 0.1);
+  border-radius: 13px;
+  background: #edf3f1;
+}
+
+.stage-post-visual img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.28s ease;
+}
+
+.stage-post:hover .stage-post-visual img,
+.stage-post:focus-within .stage-post-visual img {
+  transform: scale(1.05);
 }
 
 .stage-post i {
-  margin-top: auto;
-  padding-top: 15px;
+  grid-column: 1;
+  grid-row: 2;
   color: #007281;
   font-size: 18px;
   font-style: normal;
   font-weight: 900;
+  transition: transform 0.18s ease;
+}
+
+.stage-post:hover i,
+.stage-post:focus-within i {
+  transform: translateX(5px);
 }
 
 .stage-post.is-first small,
@@ -3101,8 +3164,9 @@ button.cta-button {
   color: #fff;
 }
 
-.stage-post.is-first span {
-  color: rgba(255, 255, 255, 0.76);
+.stage-post.is-first .stage-post-visual {
+  border-color: rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.08);
 }
 
 .popular-post-grid {
@@ -3138,13 +3202,8 @@ button.cta-button {
 }
 
 @media (max-width: 920px) {
-  .stage-explorer-card {
-    grid-template-columns: minmax(0, 1fr) 118px;
-  }
-
-  .stage-explorer-card img {
-    width: 118px;
-    height: 96px;
+  .stage-explorer-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   .stage-explorer-posts {
@@ -3152,7 +3211,15 @@ button.cta-button {
   }
 
   .stage-post {
-    min-height: 142px;
+    min-height: 152px;
+  }
+
+  .stage-post > a {
+    grid-template-columns: minmax(0, 1fr) 112px;
+  }
+
+  .stage-post-visual {
+    min-height: 104px;
   }
 }
 
@@ -3162,7 +3229,7 @@ button.cta-button {
   }
 
   .stage-explorer-panel {
-    padding: 9px;
+    padding: 8px;
     border-radius: 22px;
   }
 
@@ -3172,19 +3239,22 @@ button.cta-button {
   }
 
   .stage-explorer-card {
-    min-height: 174px;
-    padding: 16px 12px 13px;
-    grid-template-columns: 1fr;
-    align-content: space-between;
-    gap: 5px;
+    min-height: 104px;
+    padding: 12px 10px 12px 12px;
+    grid-template-columns: minmax(0, 1fr) 32px;
+    gap: 6px;
     border-radius: 15px;
   }
 
-  .stage-explorer-card img {
-    width: 100%;
-    height: 74px;
-    justify-self: center;
-    order: -1;
+  .stage-explorer-icon {
+    width: 32px;
+    height: 32px;
+    border-radius: 9px;
+  }
+
+  .stage-explorer-icon svg {
+    width: 20px;
+    height: 20px;
   }
 
   .stage-explorer-result {
