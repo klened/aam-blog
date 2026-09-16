@@ -62,51 +62,59 @@ export function StageExplorer({ posts }: { posts: PostMeta[] }) {
         <p>현재 상황을 선택하면 먼저 확인할 글부터 보여드립니다.</p>
       </header>
 
-      <div className="stage-explorer-grid" role="tablist" aria-label="진행 단계 선택">
-        {STAGES.map((stage) => {
-          const selectedStage = stage.id === active.id
-          return (
-            <button
-              type="button"
-              role="tab"
-              aria-selected={selectedStage}
-              aria-controls="stage-explorer-posts"
-              className={selectedStage ? 'stage-explorer-card is-active' : 'stage-explorer-card'}
-              key={stage.id}
-              onClick={() => setActiveId(stage.id)}
-            >
-              <span className="stage-explorer-copy">
-                <small>{stage.eyebrow}</small>
-                <strong>{stage.title}</strong>
-                <span>{stage.description}</span>
-              </span>
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src={stage.image} alt="" width="480" height="384" loading="lazy" decoding="async" />
-            </button>
-          )
-        })}
-      </div>
-
-      <div className="stage-explorer-result" id="stage-explorer-posts" role="tabpanel">
-        <div className="stage-explorer-result-head">
-          <div>
-            <span>{active.resultLabel}</span>
-            <h3>먼저 확인할 글 {selected.length}편</h3>
-          </div>
-          <Link href={`${SITE.basePath}/`}>전체 글 보기</Link>
+      <div className="stage-explorer-panel">
+        <div className="stage-explorer-grid" role="tablist" aria-label="진행 단계 선택">
+          {STAGES.map((stage) => {
+            const selectedStage = stage.id === active.id
+            return (
+              <button
+                type="button"
+                role="tab"
+                id={`stage-tab-${stage.id}`}
+                aria-selected={selectedStage}
+                aria-controls="stage-explorer-posts"
+                className={selectedStage ? 'stage-explorer-card is-active' : 'stage-explorer-card'}
+                key={stage.id}
+                onClick={() => setActiveId(stage.id)}
+              >
+                <span className="stage-explorer-copy">
+                  <small>{stage.eyebrow}</small>
+                  <strong>{stage.title}</strong>
+                  <span>{stage.description}</span>
+                </span>
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img src={stage.image} alt="" width="480" height="384" loading="lazy" decoding="async" />
+              </button>
+            )
+          })}
         </div>
 
-        <div className="stage-explorer-posts">
-          {selected.map((post, index) => (
-            <article className={index === 0 ? 'stage-post is-first' : 'stage-post'} key={post.slug}>
-              <Link href={`${SITE.basePath}/${encodeURIComponent(post.slug)}/`}>
-                <small>{index === 0 ? '먼저 읽기' : post.category}</small>
-                <strong>{post.title}</strong>
-                {(post.gain || post.summary) && <span>{post.gain || post.summary}</span>}
-                <i aria-hidden="true">→</i>
-              </Link>
-            </article>
-          ))}
+        <div
+          className="stage-explorer-result"
+          id="stage-explorer-posts"
+          role="tabpanel"
+          aria-labelledby={`stage-tab-${active.id}`}
+        >
+          <div className="stage-explorer-result-head">
+            <div>
+              <span>{active.resultLabel}</span>
+              <h3>먼저 확인할 글 {selected.length}편</h3>
+            </div>
+            <Link href={`${SITE.basePath}/`}>전체 글 보기</Link>
+          </div>
+
+          <div className="stage-explorer-posts">
+            {selected.map((post, index) => (
+              <article className={index === 0 ? 'stage-post is-first' : 'stage-post'} key={post.slug}>
+                <Link href={`${SITE.basePath}/${encodeURIComponent(post.slug)}/`}>
+                  <small>{index === 0 ? '먼저 읽기' : post.category}</small>
+                  <strong>{post.title}</strong>
+                  {(post.gain || post.summary) && <span>{post.gain || post.summary}</span>}
+                  <i aria-hidden="true">→</i>
+                </Link>
+              </article>
+            ))}
+          </div>
         </div>
       </div>
     </section>

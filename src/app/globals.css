@@ -2919,10 +2919,18 @@ button.cta-button {
   line-height: 1.65;
 }
 
+.stage-explorer-panel {
+  padding: 15px;
+  border: 1px solid #dce6e1;
+  border-radius: 28px;
+  background: #f4f8f5;
+  box-shadow: 0 18px 46px rgba(22, 52, 57, 0.08);
+}
+
 .stage-explorer-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 14px;
+  gap: 10px;
 }
 
 .stage-explorer-card {
@@ -2930,8 +2938,8 @@ button.cta-button {
   min-height: 174px;
   padding: 23px 22px 20px 25px;
   border: 1px solid #d8e2dd;
-  border-radius: 22px;
-  background: #f5f7f1;
+  border-radius: 18px;
+  background: #fff;
   color: inherit;
   cursor: pointer;
   display: grid;
@@ -2958,7 +2966,7 @@ button.cta-button {
 .stage-explorer-card.is-active {
   border: 2px solid #007281;
   background: #eaf6f4;
-  box-shadow: 0 12px 28px rgba(0, 109, 123, 0.12);
+  box-shadow: inset 0 0 0 1px rgba(0, 114, 129, 0.04), 0 10px 24px rgba(0, 109, 123, 0.11);
 }
 
 .stage-explorer-copy,
@@ -2997,12 +3005,12 @@ button.cta-button {
 }
 
 .stage-explorer-result {
-  margin-top: 24px;
+  margin-top: 12px;
   padding: 28px;
-  border: 1px solid #e0e7e4;
-  border-radius: 22px;
+  border: 0;
+  border-radius: 20px;
   background: #fff;
-  box-shadow: 0 18px 46px rgba(22, 52, 57, 0.08);
+  box-shadow: none;
 }
 
 .stage-explorer-result-head {
@@ -3153,30 +3161,56 @@ button.cta-button {
     margin-bottom: 34px;
   }
 
+  .stage-explorer-panel {
+    padding: 9px;
+    border-radius: 22px;
+  }
+
   .stage-explorer-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 8px;
   }
 
   .stage-explorer-card {
-    min-height: 154px;
-    padding: 19px 18px 18px 20px;
-    grid-template-columns: minmax(0, 1fr) 100px;
-    border-radius: 19px;
+    min-height: 174px;
+    padding: 16px 12px 13px;
+    grid-template-columns: 1fr;
+    align-content: space-between;
+    gap: 5px;
+    border-radius: 15px;
   }
 
   .stage-explorer-card img {
-    width: 100px;
-    height: 84px;
+    width: 100%;
+    height: 74px;
+    justify-self: center;
+    order: -1;
   }
 
   .stage-explorer-result {
-    padding: 21px 17px;
+    margin-top: 9px;
+    padding: 21px 15px;
+    border-radius: 16px;
   }
 
   .stage-explorer-result-head {
     align-items: start;
     flex-direction: column;
     gap: 9px;
+  }
+
+  .stage-explorer-copy small {
+    margin-bottom: 5px;
+    font-size: 10px;
+  }
+
+  .stage-explorer-copy strong {
+    margin-bottom: 5px;
+    font-size: 15px;
+  }
+
+  .stage-explorer-copy > span {
+    display: none;
   }
 
   .popular-post-grid {
