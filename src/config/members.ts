@@ -6,7 +6,7 @@
  * 여기에 사람을 추가한다. 사람을 추가하면 site.ts 의 CATEGORY_OWNERS 도 함께
  * 나눠 준다.
  *
- * 사진은 배경을 지운 이미지를 public/images/팀/{이름}.webp 에 두면 붙는다.
+ * 사진은 세로형 인물 이미지를 public/images/팀/{이름}.webp 에 두면 붙는다.
  * 없으면 이름 첫 글자 배지로 대체되므로, 사진 없이도 페이지는 정상 동작한다.
  */
 
@@ -29,6 +29,7 @@ export type Member = {
 export const MEMBERS: Record<string, Member> = {
   '더블에이엠 기술팀': {
     title: '',
+    photo: '/images/팀/더블에이엠 기술팀.webp',
     career: [
       '스트라타시스(Stratasys) 공식 파트너',
       '폼랩(Formlabs) 공식 파트너',

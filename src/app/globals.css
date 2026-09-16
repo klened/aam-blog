@@ -683,11 +683,13 @@ a {
   text-decoration: none;
 }
 .post-author-face {
-  width: 22px;
-  height: 22px;
+  width: 26px;
+  height: 26px;
   flex: none;
   border-radius: 50%;
   object-fit: cover;
+  object-position: center 38%;
+  border: 1px solid rgba(1, 93, 117, 0.18);
   background: #eef2f8;
 }
 .post-author-face.is-initial {
@@ -2296,8 +2298,7 @@ button.cta-button {
 .member-list a:hover {
   border-color: var(--navy);
 }
-/* 배경을 지운 사진이라 그대로 두면 인물이 흰 바탕에 떠 보인다.
-   옅은 판을 깔고 위쪽을 기준으로 잘라 얼굴이 항상 보이게 한다. */
+/* 인물 사진의 비율이 달라도 얼굴이 항상 보이도록 위쪽을 기준으로 자른다. */
 .member-photo {
   display: block;
   position: relative;
@@ -2359,8 +2360,7 @@ button.cta-button {
   padding: 0 0 32px;
 }
 /* 얼굴은 원이 아니라 세로 사각형이다. 원은 SNS 프로필의 문법이고
-   증명사진 비율의 사각형이 인물 소개로 읽힌다. 원본이 283×520이라
-   세로로 잘라도 얼굴이 잘리지 않는다. */
+   4:5 비율의 사각형이 인물 소개로 읽힌다. */
 .member-photo {
   flex: none;
   width: 164px;

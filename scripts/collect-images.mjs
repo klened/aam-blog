@@ -26,7 +26,7 @@ const ROOT = path.resolve(import.meta.dirname, '..')
 const POSTS = path.join(ROOT, 'content', 'posts')
 const OUT = path.join(ROOT, 'public', 'images')
 /** 이 폴더들은 글에 딸린 것이 아니라 사이트가 늘 쓰는 것이라 건드리지 않는다. */
-const 지킬것 = new Set(['공통', '노무사'])
+const 지킬것 = new Set(['공통', '노무사', '팀'])
 const 그림 = /\.(webp|png|jpe?g|gif|svg|avif)$/i
 
 const 로그 = (m) => console.log(`[이미지] ${m}`)
