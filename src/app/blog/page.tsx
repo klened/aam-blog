@@ -5,11 +5,12 @@ import { blogJsonLd, listUrl } from '@/lib/seo'
 import { JsonLd } from '@/components/JsonLd'
 import { ChannelTalk } from '@/components/ChannelTalk'
 import { CategoryNav } from '@/components/CategoryNav'
-import { PostList, paginate } from '@/components/PostList'
 import { SeasonalBanner } from '@/components/SeasonalBanner'
 import { imageSrc } from '@/lib/imageSize'
 import { SEASONAL } from '@/config/site'
 import { StageExplorer } from '@/components/StageExplorer'
+import { PopularPostGrid } from '@/components/PopularPostGrid'
+import { popularSlugs } from '@/lib/popular'
 
 /**
  * 검색결과와 브라우저 탭에 뜨는 제목. 화면 맨 위 표지와 같은 문구를 쓴다.
@@ -38,7 +39,12 @@ export const metadata: Metadata = {
 export default async function BlogIndex() {
   const posts = await listPosts()
   const categories = await listCategories()
-  const { items, page, totalPages } = paginate(posts, 1)
+  const rankedPosts = popularSlugs()
+    .map((slug) => posts.find((post) => post.slug === slug))
+    .filter((post): post is (typeof posts)[number] => Boolean(post))
+    .slice(0, 6)
+  const hasWeeklyRanking = rankedPosts.length >= 6
+  const homePosts = hasWeeklyRanking ? rankedPosts : posts.slice(0, 6)
 
   return (
     <>
@@ -71,18 +77,7 @@ export default async function BlogIndex() {
             )}
           />
 
-          {/*
-            전체 보기에는 큰 카드를 두지 않는다. 위에 이미 계절 배너가 있어서
-            큰 그림이 두 번 연달아 나오고, 맨 위 한 편만 유난히 커 보인다.
-            분야별 목록에는 배너가 없어 그대로 둔다.
-          */}
-          <PostList
-            posts={items}
-            page={page}
-            totalPages={totalPages}
-            basePath={SITE.basePath}
-            showFeatured={false}
-          />
+          <PopularPostGrid posts={homePosts} ranked={hasWeeklyRanking} />
         </div>
       </div>
     </>

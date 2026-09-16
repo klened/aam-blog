@@ -3097,6 +3097,38 @@ button.cta-button {
   color: rgba(255, 255, 255, 0.76);
 }
 
+.popular-post-grid {
+  margin-top: 46px;
+  padding-top: 34px;
+  border-top: 1px solid #e1e7e4;
+}
+
+.popular-post-grid-head > span {
+  color: #007281;
+  font-size: 13px;
+  font-weight: 800;
+}
+
+.popular-post-grid-head h2 {
+  margin: 7px 0 8px;
+  color: #17212d;
+  font-size: 29px;
+  line-height: 1.25;
+  letter-spacing: -0.045em;
+}
+
+.popular-post-grid-head p {
+  margin: 0;
+  color: #66747f;
+  font-size: 15px;
+  line-height: 1.65;
+}
+
+.popular-post-grid-cards {
+  margin-top: 24px;
+  margin-bottom: 0;
+}
+
 @media (max-width: 920px) {
   .stage-explorer-card {
     grid-template-columns: minmax(0, 1fr) 118px;
@@ -3145,5 +3177,10 @@ button.cta-button {
     align-items: start;
     flex-direction: column;
     gap: 9px;
+  }
+
+  .popular-post-grid {
+    margin-top: 36px;
+    padding-top: 28px;
   }
 }

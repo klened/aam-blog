@@ -48,7 +48,7 @@ const ACCOUNT_ID = process.env.CF_ACCOUNT_ID || '2166526a955439000481b67d1cc1c7a
  */
 const SITE_TAG = process.env.CF_SITE_TAG || '291a064cdb87499c8c9d6ead9c82279d' // blog.aamkorea.co.kr Web Analytics 사이트 태그(kleneed7 계정). Manage site 주소 끝값.
 /** 며칠치를 볼 것인가. 너무 길면 옛 글이 계속 위에 남고, 짧으면 들쭉날쭉하다. */
-const DAYS = 30
+const DAYS = 7
 /** 몇 편을 적어 둘 것인가. 글 아래에는 셋만 쓰지만 여유를 둔다. */
 const KEEP = 10
 
