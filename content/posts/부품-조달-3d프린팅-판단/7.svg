@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675" role="img" aria-labelledby="title desc">
+  <title id="title">기존 방식과 3D프린팅의 정지 시간 비용 비교</title>
+  <desc id="desc">기존 부품 8일 15만 원과 3D프린팅 부품 2일 42만 원을 비교하고, 추가 제작비 27만 원보다 회복 시간의 값 600만 원이 큰 예시</desc>
+  <rect width="1200" height="675" rx="28" fill="#f7fafb"/>
+  <text x="600" y="67" text-anchor="middle" font-family="Pretendard, 'Malgun Gothic', sans-serif" font-size="34" font-weight="800" fill="#17313a">부품값보다 멈춰 있는 시간의 값을 먼저 봅니다</text>
+  <text x="600" y="107" text-anchor="middle" font-family="Pretendard, 'Malgun Gothic', sans-serif" font-size="20" fill="#60737a">아래 금액은 판단 방법을 보여주기 위한 계산 예시입니다</text>
+
+  <g transform="translate(70 148)">
+    <rect width="410" height="238" rx="22" fill="#ffffff" stroke="#aab8bd" stroke-width="3"/>
+    <rect width="410" height="58" rx="22" fill="#e9eef0"/>
+    <rect y="34" width="410" height="24" fill="#e9eef0"/>
+    <text x="205" y="40" text-anchor="middle" font-family="Pretendard, 'Malgun Gothic', sans-serif" font-size="24" font-weight="800" fill="#455b63">기존 방식</text>
+    <g transform="translate(61 91)">
+      <rect width="96" height="85" rx="10" fill="#f4f7f8" stroke="#667c84" stroke-width="6"/>
+      <line x1="0" y1="28" x2="96" y2="28" stroke="#667c84" stroke-width="6"/>
+      <line x1="24" y1="-8" x2="24" y2="14" stroke="#667c84" stroke-width="6" stroke-linecap="round"/>
+      <line x1="72" y1="-8" x2="72" y2="14" stroke="#667c84" stroke-width="6" stroke-linecap="round"/>
+      <text x="48" y="70" text-anchor="middle" font-family="Pretendard, 'Malgun Gothic', sans-serif" font-size="29" font-weight="800" fill="#455b63">8일</text>
+    </g>
+    <line x1="205" y1="94" x2="205" y2="191" stroke="#d5dee1" stroke-width="2"/>
+    <text x="300" y="128" text-anchor="middle" font-family="Pretendard, 'Malgun Gothic', sans-serif" font-size="18" fill="#667c84">부품 제작비</text>
+    <text x="300" y="175" text-anchor="middle" font-family="Pretendard, 'Malgun Gothic', sans-serif" font-size="38" font-weight="800" fill="#455b63">15만 원</text>
+    <text x="205" y="218" text-anchor="middle" font-family="Pretendard, 'Malgun Gothic', sans-serif" font-size="17" fill="#778a91">설비는 부품을 기다리는 동안 멈춤</text>
+  </g>
+
+  <g transform="translate(720 148)">
+    <rect width="410" height="238" rx="22" fill="#ffffff" stroke="#62a9bb" stroke-width="3"/>
+    <rect width="410" height="58" rx="22" fill="#e5f4f8"/>
+    <rect y="34" width="410" height="24" fill="#e5f4f8"/>
+    <text x="205" y="40" text-anchor="middle" font-family="Pretendard, 'Malgun Gothic', sans-serif" font-size="24" font-weight="800" fill="#015d75">3D프린팅</text>
+    <g transform="translate(61 91)">
+      <rect width="96" height="85" rx="10" fill="#eff9fb" stroke="#015d75" stroke-width="6"/>
+      <line x1="0" y1="28" x2="96" y2="28" stroke="#015d75" stroke-width="6"/>
+      <line x1="24" y1="-8" x2="24" y2="14" stroke="#015d75" stroke-width="6" stroke-linecap="round"/>
+      <line x1="72" y1="-8" x2="72" y2="14" stroke="#015d75" stroke-width="6" stroke-linecap="round"/>
+      <text x="48" y="70" text-anchor="middle" font-family="Pretendard, 'Malgun Gothic', sans-serif" font-size="29" font-weight="800" fill="#015d75">2일</text>
+    </g>
+    <line x1="205" y1="94" x2="205" y2="191" stroke="#cfe2e7" stroke-width="2"/>
+    <text x="300" y="128" text-anchor="middle" font-family="Pretendard, 'Malgun Gothic', sans-serif" font-size="18" fill="#477883">검증 포함 제작비</text>
+    <text x="300" y="175" text-anchor="middle" font-family="Pretendard, 'Malgun Gothic', sans-serif" font-size="38" font-weight="800" fill="#015d75">42만 원</text>
+    <text x="205" y="218" text-anchor="middle" font-family="Pretendard, 'Malgun Gothic', sans-serif" font-size="17" fill="#477883">검증을 마치고 6일 먼저 재가동</text>
+  </g>
+
+  <g>
+    <path d="M500 246 H686" stroke="#2c8a52" stroke-width="8" stroke-linecap="round"/>
+    <path d="M668 226 L694 246 L668 266" fill="none" stroke="#2c8a52" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+    <rect x="518" y="182" width="164" height="42" rx="21" fill="#e8f5ec"/>
+    <text x="600" y="211" text-anchor="middle" font-family="Pretendard, 'Malgun Gothic', sans-serif" font-size="20" font-weight="800" fill="#297a38">6일 단축</text>
+  </g>
+
+  <g transform="translate(70 425)">
+    <rect width="1060" height="170" rx="22" fill="#ffffff" stroke="#d4dee1" stroke-width="3"/>
+    <g transform="translate(35 27)">
+      <rect width="300" height="112" rx="16" fill="#fff1df"/>
+      <text x="150" y="39" text-anchor="middle" font-family="Pretendard, 'Malgun Gothic', sans-serif" font-size="19" font-weight="700" fill="#9a3f00">추가 제작비</text>
+      <text x="150" y="87" text-anchor="middle" font-family="Pretendard, 'Malgun Gothic', sans-serif" font-size="37" font-weight="800" fill="#9a3f00">27만 원</text>
+    </g>
+    <text x="530" y="94" text-anchor="middle" font-family="Pretendard, 'Malgun Gothic', sans-serif" font-size="47" font-weight="800" fill="#6b7e85">&lt;</text>
+    <g transform="translate(610 27)">
+      <rect width="415" height="112" rx="16" fill="#e8f5ec"/>
+      <text x="207" y="39" text-anchor="middle" font-family="Pretendard, 'Malgun Gothic', sans-serif" font-size="19" font-weight="700" fill="#245c2d">회복하는 시간의 값</text>
+      <text x="207" y="87" text-anchor="middle" font-family="Pretendard, 'Malgun Gothic', sans-serif" font-size="37" font-weight="800" fill="#245c2d">600만 원</text>
+    </g>
+  </g>
+
+  <text x="600" y="640" text-anchor="middle" font-family="Pretendard, 'Malgun Gothic', sans-serif" font-size="18" font-weight="700" fill="#5b7077">하중·온도·안전 조건을 검증할 수 있을 때 적용하는 계산입니다</text>
+</svg>

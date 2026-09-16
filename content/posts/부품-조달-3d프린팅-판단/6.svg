@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675" role="img" aria-labelledby="title desc">
+  <title id="title">3D프린팅 견적에서 확인할 3가지</title>
+  <desc id="desc">제작 가능 여부, 총비용, 실제 사용 가능일을 함께 확인하는 도식</desc>
+  <rect width="1200" height="675" rx="28" fill="#f7fafb"/>
+  <text x="600" y="72" text-anchor="middle" font-family="Pretendard, 'Malgun Gothic', sans-serif" font-size="34" font-weight="800" fill="#17313a">견적 전에 3가지를 한 번에 확인합니다</text>
+  <text x="600" y="112" text-anchor="middle" font-family="Pretendard, 'Malgun Gothic', sans-serif" font-size="20" fill="#60737a">출력 가능 여부만 확인하면 비용과 실제 납품일을 놓칠 수 있습니다</text>
+
+  <g transform="translate(55 155)">
+    <rect width="330" height="425" rx="22" fill="#ffffff" stroke="#8bbcca" stroke-width="3"/>
+    <circle cx="165" cy="110" r="62" fill="#e5f4f8"/>
+    <path d="M120 88 L165 62 L210 88 L210 140 L165 166 L120 140 Z" fill="none" stroke="#015d75" stroke-width="9" stroke-linejoin="round"/>
+    <circle cx="143" cy="106" r="8" fill="#015d75"/>
+    <circle cx="187" cy="106" r="8" fill="#015d75"/>
+    <path d="M148 135 L161 148 L187 122" fill="none" stroke="#2c8a52" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
+    <text x="165" y="222" text-anchor="middle" font-family="Pretendard, 'Malgun Gothic', sans-serif" font-size="31" font-weight="800" fill="#015d75">제작할 수 있나</text>
+    <line x1="65" y1="250" x2="265" y2="250" stroke="#d8e4e8" stroke-width="2"/>
+    <text x="165" y="295" text-anchor="middle" font-family="Pretendard, 'Malgun Gothic', sans-serif" font-size="21" fill="#354a52">형상 · 소재 · 하중</text>
+    <text x="165" y="333" text-anchor="middle" font-family="Pretendard, 'Malgun Gothic', sans-serif" font-size="21" fill="#354a52">온도 · 공차 · 승인 조건</text>
+    <rect x="88" y="365" width="154" height="38" rx="19" fill="#e5f4f8"/>
+    <text x="165" y="391" text-anchor="middle" font-family="Pretendard, 'Malgun Gothic', sans-serif" font-size="17" font-weight="700" fill="#015d75">기능 검토</text>
+  </g>
+
+  <g transform="translate(435 155)">
+    <rect width="330" height="425" rx="22" fill="#ffffff" stroke="#e6b17b" stroke-width="3"/>
+    <circle cx="165" cy="110" r="62" fill="#fff1df"/>
+    <ellipse cx="148" cy="90" rx="40" ry="17" fill="none" stroke="#bd5a0b" stroke-width="8"/>
+    <path d="M108 90 V132 C108 142 126 150 148 150 C170 150 188 142 188 132 V90" fill="none" stroke="#bd5a0b" stroke-width="8"/>
+    <path d="M108 111 C108 121 126 129 148 129 C170 129 188 121 188 111" fill="none" stroke="#bd5a0b" stroke-width="6"/>
+    <rect x="181" y="96" width="48" height="64" rx="7" fill="#fff" stroke="#bd5a0b" stroke-width="7"/>
+    <circle cx="194" cy="121" r="4" fill="#bd5a0b"/><circle cx="216" cy="121" r="4" fill="#bd5a0b"/>
+    <circle cx="194" cy="142" r="4" fill="#bd5a0b"/><circle cx="216" cy="142" r="4" fill="#bd5a0b"/>
+    <text x="165" y="222" text-anchor="middle" font-family="Pretendard, 'Malgun Gothic', sans-serif" font-size="31" font-weight="800" fill="#9a3f00">총비용은 얼마인가</text>
+    <line x1="65" y1="250" x2="265" y2="250" stroke="#eadfce" stroke-width="2"/>
+    <text x="165" y="295" text-anchor="middle" font-family="Pretendard, 'Malgun Gothic', sans-serif" font-size="21" fill="#4f453c">모델링 · 출력 · 후처리</text>
+    <text x="165" y="333" text-anchor="middle" font-family="Pretendard, 'Malgun Gothic', sans-serif" font-size="21" fill="#4f453c">검사 · 배송 포함 범위</text>
+    <rect x="88" y="365" width="154" height="38" rx="19" fill="#fff1df"/>
+    <text x="165" y="391" text-anchor="middle" font-family="Pretendard, 'Malgun Gothic', sans-serif" font-size="17" font-weight="700" fill="#9a3f00">비용 범위</text>
+  </g>
+
+  <g transform="translate(815 155)">
+    <rect width="330" height="425" rx="22" fill="#ffffff" stroke="#9dc9aa" stroke-width="3"/>
+    <circle cx="165" cy="110" r="62" fill="#e9f5ec"/>
+    <rect x="111" y="69" width="108" height="91" rx="10" fill="#fff" stroke="#297a38" stroke-width="8"/>
+    <line x1="111" y1="98" x2="219" y2="98" stroke="#297a38" stroke-width="8"/>
+    <line x1="138" y1="60" x2="138" y2="82" stroke="#297a38" stroke-width="8" stroke-linecap="round"/>
+    <line x1="192" y1="60" x2="192" y2="82" stroke="#297a38" stroke-width="8" stroke-linecap="round"/>
+    <circle cx="192" cy="137" r="35" fill="#e9f5ec" stroke="#297a38" stroke-width="7"/>
+    <path d="M192 116 V137 L208 147" fill="none" stroke="#297a38" stroke-width="7" stroke-linecap="round"/>
+    <text x="165" y="222" text-anchor="middle" font-family="Pretendard, 'Malgun Gothic', sans-serif" font-size="31" font-weight="800" fill="#245c2d">언제 사용할 수 있나</text>
+    <line x1="65" y1="250" x2="265" y2="250" stroke="#d8e6dc" stroke-width="2"/>
+    <text x="165" y="295" text-anchor="middle" font-family="Pretendard, 'Malgun Gothic', sans-serif" font-size="21" fill="#3e5043">파일 검토 · 시험 출력</text>
+    <text x="165" y="333" text-anchor="middle" font-family="Pretendard, 'Malgun Gothic', sans-serif" font-size="21" fill="#3e5043">검수 · 배송 일정</text>
+    <rect x="88" y="365" width="154" height="38" rx="19" fill="#e9f5ec"/>
+    <text x="165" y="391" text-anchor="middle" font-family="Pretendard, 'Malgun Gothic', sans-serif" font-size="17" font-weight="700" fill="#245c2d">사용 가능일</text>
+  </g>
+
+  <path d="M410 367 H422" stroke="#8ca0a7" stroke-width="5" stroke-linecap="round"/>
+  <path d="M790 367 H802" stroke="#8ca0a7" stroke-width="5" stroke-linecap="round"/>
+  <text x="600" y="635" text-anchor="middle" font-family="Pretendard, 'Malgun Gothic', sans-serif" font-size="19" font-weight="700" fill="#51666e">3가지 답을 같은 조건으로 받아야 제작 방식과 업체를 비교할 수 있습니다</text>
+</svg>
