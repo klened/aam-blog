@@ -1,0 +1,70 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 320" font-family="'Pretendard','Malgun Gothic','Noto Sans KR',sans-serif">
+  <rect width="800" height="320" rx="12" fill="#f8fafd"/>
+
+  <!-- Title bar -->
+  <rect x="0" y="0" width="800" height="50" rx="12" fill="#1a1a2e"/>
+  <rect x="0" y="38" width="800" height="12" fill="#1a1a2e"/>
+  <text x="400" y="33" text-anchor="middle" fill="#fff" font-size="18" font-weight="700">단면 형상에 따른 강성 비교 — 같은 벽 두께, 다른 강성</text>
+
+  <!-- Section 1: ㄴ shape (L) -->
+  <rect x="30" y="70" width="230" height="230" rx="10" fill="#fff" stroke="#e3ebf5" stroke-width="1.5"/>
+
+  <!-- L shape -->
+  <rect x="85" y="120" width="12" height="100" fill="#c8d8ec" stroke="#1a1a2e" stroke-width="2.5"/>
+  <rect x="85" y="208" width="120" height="12" fill="#c8d8ec" stroke="#1a1a2e" stroke-width="2.5"/>
+
+  <text x="145" y="170" text-anchor="middle" fill="#1a1a2e" font-size="40" font-weight="200" opacity="0.15">ㄴ</text>
+
+  <!-- Stiffness bar -->
+  <rect x="60" y="248" width="170" height="8" rx="4" fill="#eee"/>
+  <rect x="60" y="248" width="50" height="8" rx="4" fill="#e8901a"/>
+
+  <text x="145" y="275" text-anchor="middle" fill="#1a1a2e" font-size="14" font-weight="700">열린 단면</text>
+  <text x="145" y="293" text-anchor="middle" fill="#e8901a" font-size="13" font-weight="700">강성 ★☆☆</text>
+
+  <!-- Section 2: ㄷ shape (C) -->
+  <rect x="285" y="70" width="230" height="230" rx="10" fill="#fff" stroke="#e3ebf5" stroke-width="1.5"/>
+
+  <!-- C shape -->
+  <rect x="340" y="120" width="12" height="100" fill="#c8d8ec" stroke="#1a1a2e" stroke-width="2.5"/>
+  <rect x="340" y="120" width="100" height="12" fill="#c8d8ec" stroke="#1a1a2e" stroke-width="2.5"/>
+  <rect x="340" y="208" width="100" height="12" fill="#c8d8ec" stroke="#1a1a2e" stroke-width="2.5"/>
+
+  <text x="400" y="175" text-anchor="middle" fill="#1a1a2e" font-size="40" font-weight="200" opacity="0.15">ㄷ</text>
+
+  <!-- Stiffness bar -->
+  <rect x="315" y="248" width="170" height="8" rx="4" fill="#eee"/>
+  <rect x="315" y="248" width="110" height="8" rx="4" fill="#1a73e8"/>
+
+  <text x="400" y="275" text-anchor="middle" fill="#1a1a2e" font-size="14" font-weight="700">반닫힌 단면</text>
+  <text x="400" y="293" text-anchor="middle" fill="#1a73e8" font-size="13" font-weight="700">강성 ★★☆</text>
+
+  <!-- Section 3: ㅁ shape (Box) -->
+  <rect x="540" y="70" width="230" height="230" rx="10" fill="#fff" stroke="#e3ebf5" stroke-width="1.5"/>
+
+  <!-- Box shape -->
+  <rect x="595" y="120" width="100" height="100" fill="#c8d8ec" stroke="#1a1a2e" stroke-width="2.5"/>
+  <rect x="607" y="132" width="76" height="76" fill="#f8fafd" stroke="#1a1a2e" stroke-width="1.5"/>
+
+  <text x="655" y="180" text-anchor="middle" fill="#1a1a2e" font-size="40" font-weight="200" opacity="0.15">ㅁ</text>
+
+  <!-- Stiffness bar -->
+  <rect x="570" y="248" width="170" height="8" rx="4" fill="#eee"/>
+  <rect x="570" y="248" width="170" height="8" rx="4" fill="#1a73e8"/>
+
+  <!-- Star highlight -->
+  <text x="655" y="275" text-anchor="middle" fill="#1a1a2e" font-size="14" font-weight="700">닫힌 단면</text>
+  <text x="655" y="293" text-anchor="middle" fill="#1a73e8" font-size="13" font-weight="700">강성 ★★★</text>
+
+  <!-- Arrow indicating improvement -->
+  <line x1="270" y1="165" x2="280" y2="165" stroke="#1a73e8" stroke-width="2" marker-end="url(#arrowBlue)"/>
+  <line x1="525" y1="165" x2="535" y2="165" stroke="#1a73e8" stroke-width="2" marker-end="url(#arrowBlue)"/>
+  <defs>
+    <marker id="arrowBlue" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+      <polygon points="0,0 8,3 0,6" fill="#1a73e8"/>
+    </marker>
+  </defs>
+
+  <!-- Bottom note -->
+  <text x="400" y="315" text-anchor="middle" fill="#999" font-size="12">SLS·MJF는 닫힌 단면 안에 분말 배출 구멍(직경 3mm 이상)을 뚫어야 합니다</text>
+</svg>

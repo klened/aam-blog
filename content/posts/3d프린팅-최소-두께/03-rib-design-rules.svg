@@ -1,0 +1,103 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 440" font-family="'Pretendard','Malgun Gothic','Noto Sans KR',sans-serif">
+  <rect width="800" height="440" rx="12" fill="#f8fafd"/>
+
+  <!-- Title bar -->
+  <rect x="0" y="0" width="800" height="50" rx="12" fill="#1a1a2e"/>
+  <rect x="0" y="38" width="800" height="12" fill="#1a1a2e"/>
+  <text x="400" y="33" text-anchor="middle" fill="#fff" font-size="18" font-weight="700">리브(보강대) 설계 규칙</text>
+
+  <!-- Main cross-section diagram -->
+  <rect x="40" y="80" width="440" height="340" rx="10" fill="#fff" stroke="#e3ebf5" stroke-width="1.5"/>
+
+  <!-- Wall (main body) -->
+  <rect x="80" y="120" width="30" height="260" fill="#c8d8ec" stroke="#1a1a2e" stroke-width="2"/>
+  <text x="95" y="260" text-anchor="middle" fill="#1a1a2e" font-size="13" font-weight="700" transform="rotate(-90,95,260)">벽 (Wall)</text>
+
+  <!-- Rib 1 -->
+  <rect x="110" y="150" width="100" height="18" fill="#1a73e8" opacity="0.25" stroke="#1a73e8" stroke-width="2"/>
+  <!-- Rib 2 -->
+  <rect x="110" y="230" width="100" height="18" fill="#1a73e8" opacity="0.25" stroke="#1a73e8" stroke-width="2"/>
+  <!-- Rib 3 -->
+  <rect x="110" y="310" width="100" height="18" fill="#1a73e8" opacity="0.25" stroke="#1a73e8" stroke-width="2"/>
+
+  <!-- T dimension (wall thickness) -->
+  <line x1="65" y1="120" x2="65" y2="145" stroke="#1a1a2e" stroke-width="1"/>
+  <line x1="60" y1="120" x2="70" y2="120" stroke="#1a1a2e" stroke-width="1"/>
+  <text x="55" y="138" text-anchor="middle" fill="#1a1a2e" font-size="16" font-weight="800">T</text>
+
+  <!-- Rib thickness dimension -->
+  <line x1="145" y1="140" x2="145" y2="150" stroke="#1a73e8" stroke-width="1.2"/>
+  <line x1="145" y1="168" x2="145" y2="178" stroke="#1a73e8" stroke-width="1.2"/>
+  <line x1="140" y1="150" x2="150" y2="150" stroke="#1a73e8" stroke-width="1.2"/>
+  <line x1="140" y1="168" x2="150" y2="168" stroke="#1a73e8" stroke-width="1.2"/>
+
+  <!-- Rib height dimension -->
+  <line x1="220" y1="150" x2="240" y2="150" stroke="#1a73e8" stroke-width="1.2"/>
+  <line x1="220" y1="168" x2="240" y2="168" stroke="#1a73e8" stroke-width="1.2"/>
+  <line x1="230" y1="145" x2="230" y2="173" stroke="#1a73e8" stroke-width="1.2"/>
+
+  <!-- Rib spacing dimension -->
+  <line x1="120" y1="170" x2="120" y2="228" stroke="#e8901a" stroke-width="1.2"/>
+  <line x1="115" y1="170" x2="125" y2="170" stroke="#e8901a" stroke-width="1.2"/>
+  <line x1="115" y1="228" x2="125" y2="228" stroke="#e8901a" stroke-width="1.2"/>
+
+  <!-- Labels with arrows -->
+  <!-- Rib thickness label -->
+  <rect x="250" y="130" width="200" height="36" rx="6" fill="#eef3fb" stroke="#1a73e8" stroke-width="1"/>
+  <text x="350" y="145" text-anchor="middle" fill="#1a73e8" font-size="13" font-weight="700">리브 두께 = T × 50~70%</text>
+  <text x="350" y="160" text-anchor="middle" fill="#666" font-size="11">예: 벽 1.5mm → 리브 0.8~1.0mm</text>
+  <line x1="250" y1="148" x2="155" y2="159" stroke="#1a73e8" stroke-width="1" stroke-dasharray="3,3"/>
+
+  <!-- Rib height label -->
+  <rect x="250" y="195" width="200" height="36" rx="6" fill="#eef3fb" stroke="#1a73e8" stroke-width="1"/>
+  <text x="350" y="210" text-anchor="middle" fill="#1a73e8" font-size="13" font-weight="700">리브 높이 ≤ T × 3</text>
+  <text x="350" y="225" text-anchor="middle" fill="#666" font-size="11">예: 벽 1.5mm → 높이 4.5mm 이하</text>
+  <line x1="250" y1="213" x2="230" y2="159" stroke="#1a73e8" stroke-width="1" stroke-dasharray="3,3"/>
+
+  <!-- Rib spacing label -->
+  <rect x="250" y="260" width="200" height="36" rx="6" fill="#fff5eb" stroke="#e8901a" stroke-width="1"/>
+  <text x="350" y="275" text-anchor="middle" fill="#e8901a" font-size="13" font-weight="700">리브 간격 = T × 2~3</text>
+  <text x="350" y="290" text-anchor="middle" fill="#666" font-size="11">예: 벽 1.5mm → 간격 3~4.5mm</text>
+  <line x1="250" y1="278" x2="130" y2="200" stroke="#e8901a" stroke-width="1" stroke-dasharray="3,3"/>
+
+  <!-- Warning box -->
+  <rect x="250" y="320" width="200" height="50" rx="6" fill="#fff0f0" stroke="#e84a4a" stroke-width="1"/>
+  <text x="265" y="340" fill="#e84a4a" font-size="18" font-weight="800">⚠</text>
+  <text x="285" y="340" fill="#e84a4a" font-size="12" font-weight="700">리브가 너무 두꺼우면</text>
+  <text x="285" y="358" fill="#666" font-size="12">반대쪽 표면에 싱크마크 발생</text>
+
+  <!-- RIGHT: Rules summary -->
+  <rect x="500" y="80" width="270" height="340" rx="10" fill="#fff" stroke="#e3ebf5" stroke-width="1.5"/>
+  <rect x="500" y="80" width="270" height="36" rx="10" fill="#1a73e8"/>
+  <rect x="500" y="106" width="270" height="10" fill="#1a73e8"/>
+  <text x="635" y="104" text-anchor="middle" fill="#fff" font-size="14" font-weight="700">설계 체크리스트</text>
+
+  <!-- Rule items -->
+  <circle cx="530" cy="142" r="12" fill="#1a73e8"/>
+  <text x="530" y="147" text-anchor="middle" fill="#fff" font-size="12" font-weight="700">1</text>
+  <text x="548" y="140" fill="#1a1a2e" font-size="13" font-weight="700">리브 두께</text>
+  <text x="548" y="156" fill="#666" font-size="12">벽의 50~70%</text>
+
+  <circle cx="530" cy="192" r="12" fill="#1a73e8"/>
+  <text x="530" y="197" text-anchor="middle" fill="#fff" font-size="12" font-weight="700">2</text>
+  <text x="548" y="190" fill="#1a1a2e" font-size="13" font-weight="700">리브 높이</text>
+  <text x="548" y="206" fill="#666" font-size="12">벽 두께의 3배 이하</text>
+
+  <circle cx="530" cy="242" r="12" fill="#1a73e8"/>
+  <text x="530" y="247" text-anchor="middle" fill="#fff" font-size="12" font-weight="700">3</text>
+  <text x="548" y="240" fill="#1a1a2e" font-size="13" font-weight="700">리브 간격</text>
+  <text x="548" y="256" fill="#666" font-size="12">벽 두께의 2~3배</text>
+
+  <circle cx="530" cy="292" r="12" fill="#1a73e8"/>
+  <text x="530" y="297" text-anchor="middle" fill="#fff" font-size="12" font-weight="700">4</text>
+  <text x="548" y="290" fill="#1a1a2e" font-size="13" font-weight="700">기저부 라운드</text>
+  <text x="548" y="306" fill="#666" font-size="12">R0.5mm 이상 필릿</text>
+
+  <circle cx="530" cy="342" r="12" fill="#1a73e8"/>
+  <text x="530" y="347" text-anchor="middle" fill="#fff" font-size="12" font-weight="700">5</text>
+  <text x="548" y="340" fill="#1a1a2e" font-size="13" font-weight="700">빼기 기울기</text>
+  <text x="548" y="356" fill="#666" font-size="12">분말 공정은 불필요</text>
+
+  <rect x="520" y="380" width="230" height="28" rx="6" fill="#f4f7fc"/>
+  <text x="635" y="399" text-anchor="middle" fill="#1a73e8" font-size="12" font-weight="600">3D 프린팅은 빼기 기울기 없이 설계 가능</text>
+</svg>

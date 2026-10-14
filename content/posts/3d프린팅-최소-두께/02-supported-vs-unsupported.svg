@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 360" font-family="'Pretendard','Malgun Gothic','Noto Sans KR',sans-serif">
+  <rect width="800" height="360" rx="12" fill="#f8fafd"/>
+
+  <!-- Title bar -->
+  <rect x="0" y="0" width="800" height="50" rx="12" fill="#1a1a2e"/>
+  <rect x="0" y="38" width="800" height="12" fill="#1a1a2e"/>
+  <text x="400" y="33" text-anchor="middle" fill="#fff" font-size="18" font-weight="700">지지된 벽 vs 독립 벽 — 같은 두께, 다른 결과</text>
+
+  <!-- LEFT: Supported wall -->
+  <rect x="30" y="70" width="360" height="270" rx="10" fill="#fff" stroke="#e3ebf5" stroke-width="1.5"/>
+  <rect x="30" y="70" width="360" height="36" rx="10" fill="#1a73e8"/>
+  <rect x="30" y="96" width="360" height="10" fill="#1a73e8"/>
+  <text x="210" y="94" text-anchor="middle" fill="#fff" font-size="15" font-weight="700">지지된 벽 (Supported)</text>
+
+  <!-- Supported wall diagram - box shape -->
+  <rect x="100" y="140" width="220" height="130" rx="0" fill="none" stroke="#1a1a2e" stroke-width="3"/>
+  <!-- Wall thickness indicators -->
+  <rect x="100" y="140" width="12" height="130" fill="#1a73e8" opacity="0.3"/>
+  <rect x="308" y="140" width="12" height="130" fill="#1a73e8" opacity="0.3"/>
+  <rect x="100" y="140" width="220" height="12" fill="#1a73e8" opacity="0.3"/>
+  <rect x="100" y="258" width="220" height="12" fill="#1a73e8" opacity="0.3"/>
+
+  <!-- Dimension arrows for supported wall -->
+  <line x1="82" y1="150" x2="82" y2="260" stroke="#1a73e8" stroke-width="1.5"/>
+  <line x1="78" y1="150" x2="86" y2="150" stroke="#1a73e8" stroke-width="1.5"/>
+  <line x1="78" y1="260" x2="86" y2="260" stroke="#1a73e8" stroke-width="1.5"/>
+  <text x="73" y="210" text-anchor="middle" fill="#1a73e8" font-size="12" font-weight="700" transform="rotate(-90,73,210)">t</text>
+
+  <!-- Checkmark -->
+  <circle cx="210" y="300" r="16" fill="#1a73e8"/>
+  <polyline points="200,300 207,308 222,293" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="210" y="330" text-anchor="middle" fill="#1a1a2e" font-size="13" font-weight="600">양쪽 연결 → 안정적</text>
+
+  <!-- RIGHT: Unsupported wall -->
+  <rect x="410" y="70" width="360" height="270" rx="10" fill="#fff" stroke="#e3ebf5" stroke-width="1.5"/>
+  <rect x="410" y="70" width="360" height="36" rx="10" fill="#e8901a"/>
+  <rect x="410" y="96" width="360" height="10" fill="#e8901a"/>
+  <text x="590" y="94" text-anchor="middle" fill="#fff" font-size="15" font-weight="700">독립 벽 (Unsupported)</text>
+
+  <!-- Unsupported wall diagram - L shape with thin tall wall -->
+  <rect x="480" y="230" width="220" height="40" rx="0" fill="none" stroke="#1a1a2e" stroke-width="3"/>
+  <!-- Tall thin wall -->
+  <rect x="480" y="130" width="12" height="140" fill="#e8901a" opacity="0.3" stroke="#1a1a2e" stroke-width="3"/>
+
+  <!-- Wavy line showing deflection -->
+  <path d="M492,130 Q500,128 492,125 Q484,122 492,118 Q500,115 492,112" fill="none" stroke="#e8901a" stroke-width="2" stroke-dasharray="4,3"/>
+  <text x="510" y="118" fill="#e8901a" font-size="11" font-weight="600">진동·충격에 약함</text>
+
+  <!-- Height indicator -->
+  <line x1="462" y1="130" x2="462" y2="230" stroke="#e8901a" stroke-width="1.5"/>
+  <line x1="458" y1="130" x2="466" y2="130" stroke="#e8901a" stroke-width="1.5"/>
+  <line x1="458" y1="230" x2="466" y2="230" stroke="#e8901a" stroke-width="1.5"/>
+  <text x="453" y="183" text-anchor="middle" fill="#e8901a" font-size="12" font-weight="700" transform="rotate(-90,453,183)">높이 h</text>
+
+  <!-- Warning -->
+  <circle cx="590" r="16" cy="300" fill="#e8901a"/>
+  <text x="590" y="306" text-anchor="middle" fill="#fff" font-size="18" font-weight="800">!</text>
+  <text x="590" y="330" text-anchor="middle" fill="#1a1a2e" font-size="13" font-weight="600">한쪽 고정 → 휨·파손 위험</text>
+</svg>
