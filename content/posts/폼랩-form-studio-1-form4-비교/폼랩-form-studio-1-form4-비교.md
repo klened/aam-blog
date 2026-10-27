@@ -11,7 +11,7 @@
 상태: 발행
 노출: true
 발행일: 2026-10-20
-최종수정일: 2026-10-20
+최종수정일: 2026-10-27
 작성자:
 근거법령: Formlabs Form Studio 1 공식 제품 자료 · Formlabs 레진 프린터 비교 자료
 근거법령링크: https://formlabs.com/3d-printers/form-studio-1/
@@ -66,6 +66,10 @@ Form Studio 1의 조형 높이는 Form 4보다 25mm 큽니다. 픽셀 크기도 
 
 지원 소재 수가 다릅니다.
 
+![Form Studio 1 Alpha Resin 출력 샘플](/images/폼랩-form-studio-1-form4-비교/6.webp)
+
+*Form Studio 1이 지원하는 Alpha Resin의 출력 샘플입니다. Formlabs 공식 이미지를 사용했습니다.*
+
 | 확인할 조건 | Form Studio 1 | Form 4 |
 | --- | --- | --- |
 | 검증된 레진 | 9종 | 23종 |
@@ -107,6 +111,10 @@ Form 4는 내열, 난연, 고강성, 연질과 충전재 소재까지 선택 범
 - 같은 조건으로 부품을 반복 생산하는 작업
 - 여러 소재를 자주 바꾸는 개발실
 
+![Form 4 기능성 부품 출력 샘플](/images/폼랩-form-studio-1-form4-비교/7.webp)
+
+*조립 공차와 반복 출력을 확인하는 기능성 부품 예시입니다. Formlabs 공식 출력 샘플을 사용했습니다.*
+
 ![Form 4 장비 정면](/images/폼랩-form-studio-1-form4-비교/5.webp)
 
 *Form 4 공식 제품 이미지입니다.*
@@ -120,6 +128,10 @@ Form 4의 조형 크기와 패키지는 [폼랩 Form 4, 어떤 회사에 맞는�
 레진 출력은 프린터에서 끝나지 않습니다. 출력물에 남은 레진을 씻고 UV로 후경화해야 합니다.
 
 Form Studio 1에는 전용 후처리 장비가 있습니다. Form Studio Wash+Cure이며 세척과 경화를 한 장비에서 처리합니다. Form 4는 Form Wash와 Form Cure를 각각 사용합니다.
+
+![Form Studio Wash+Cure와 Form Wash·Form Cure 비교](/images/폼랩-form-studio-1-form4-비교/8.webp)
+
+*Form Studio Wash+Cure와 Form Wash·Form Cure의 작업 구성을 비교했습니다. Formlabs 공식 제품 이미지를 사용했습니다.*
 
 견적에는 다음 항목을 함께 넣습니다.
 
